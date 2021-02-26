@@ -1,0 +1,40 @@
+.contact-us {
+    // height: 100vh;
+    & .section-header {
+
+        padding: 10rem 5rem 0 5rem;
+        color: var(--color-almost-white-blue);
+    }
+    & .wpcf7 {
+        padding: 10em 4em;
+            @media only screen and (max-width: $bp-md) {
+                padding: 7em 3em;
+            }
+        & .row div span input {
+            height: 45px;
+            margin-bottom: 2em;
+            &::placeholder {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+        }
+        & .row div span textarea{
+            // height: 200px;
+            margin-bottom: 2em;
+            &::placeholder {
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+    & .wpcf7-not-valid-tip {
+        font-size: 1.4rem;
+    }
+
+}
+.wpcf7-response-output {
+    border: none !important;
+    color: var(--color-almost-white-blue);
+    font-size: 1.3rem;
+}
+

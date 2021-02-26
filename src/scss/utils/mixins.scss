@@ -1,0 +1,20 @@
+@mixin box-shadow-md {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@mixin bg-gradient-brand-muted {
+    background: linear-gradient(
+        180deg,
+        #f69333 0%,
+        rgba(246, 147, 51, 0.21) 100%
+      );
+  }
+
+@mixin bg-gradient-brand-muted-flipped {
+    background: linear-gradient(180deg, rgba(246, 147, 51, 0.218229) 0%, rgba(246, 147, 51, 0.934924) 99.98%, #F69333 99.99%, rgba(246, 147, 51, 0.21) 100%);
+
+}
+@mixin bg-gradient-brand-muted-flipped-opacity-less {
+    background: linear-gradient(180deg, rgba(246, 147, 51, 0.218229) 0%, rgba(246, 147, 51, 0.6) 99.98%, #F69333 99.99%, rgba(246, 147, 51, 0.21) 40%);
+  
+}

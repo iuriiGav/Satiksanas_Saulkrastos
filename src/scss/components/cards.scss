@@ -1,0 +1,10 @@
+.concert-card {
+    background-color: var(--color-white);
+    @include box-shadow-md();
+    min-height: 6rem;
+    border-radius: 3px;
+    display: flex;
+        &__long {
+            
+        }
+    }

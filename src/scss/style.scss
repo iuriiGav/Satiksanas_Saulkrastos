@@ -1,0 +1,33 @@
+/*!
+Theme Name: Satiksanos Saulkrastos
+Theme URI: 
+Author: Iurii Gavryliuk 
+Author URI: 
+Description: Made with love for my dear friend Konstantins Paturskis
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: satiksanos-saulkrastos
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+$navbar-light-active-color:  --color-almost-white-blue;
+$navbar-toggler-focus-width: 0;
+$headings-margin-bottom: 0;
+$paragraph-margin-bottom: 0;
+
+@import "./utils/reset.scss";
+@import "./base/base.scss";
+@import "./utils/mixins.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./typography/typography";
+@import "./colors/colors.scss";
+@import "./nav/main-nav";
+@import "./pages/home";
+@import "./components/cards.scss";
+@import "./components/swiper-gallery";
+@import "./components/buttons.scss";
+@import "./components/logo-footer";
+
+
+@import "./utils/utils"

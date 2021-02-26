@@ -1,0 +1,111 @@
+.homepage-about-us {
+  position: relative;
+  padding: 8rem 0;
+  & .section-header {
+    color: var(--color-almost-white-blue);
+  }
+  @media only screen and (max-width: $bp-md) {
+    padding: 2rem 0;
+  }
+}
+
+// About card
+
+.homepage-about-us .about-text-card {
+  position: absolute;
+  left: 10em;
+  height: 100%;
+@include bg-gradient-brand-muted();
+
+  @media only screen and (max-width: $bp-md) {
+  position: relative;
+  left: 0;
+  width: 80%;
+  background: none;
+margin: 0 auto;
+}
+
+  & p {
+    font-family: var(--ternary-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 5rem;
+
+    text-align: center;
+    letter-spacing: 0.13em;
+    padding: 0 7em 0 2.6em;
+        @media only screen and (max-width: $bp-xl) {
+            font-size: 2rem;
+            padding-right: 5.2em;
+        }
+        @media only screen and (max-width: $bp-lg) {
+            padding-right: 4.2em;
+
+            line-height: 3.5rem;
+
+        }
+        @media only screen and (max-width: $bp-md) {
+          font-size: 2.4rem;
+          line-height: 4.5rem;
+          padding: 1em;
+          color: var(--color-almost-white-blue);
+          align-self: flex-start;
+
+
+        }
+  }
+}
+
+// Gallery
+
+.homepage-aboutus-gallery-container {
+  position: relative;
+  @media only screen and (max-width: $bp-md) {
+ margin-top: -5em;
+
+
+  }
+}
+
+.festival-numbers {
+  padding-bottom: 10rem;
+  margin-top:5rem;
+  @media only screen and (max-width: $bp-md) {
+ @include bg-gradient-brand-muted-flipped();
+ margin-top: -20em;
+ padding-top: 20em;
+
+     }
+}
+.festival-numbers div {
+  margin-bottom: 3rem;
+}
+.festival-numbers > div h2,
+.festival-numbers > div h3 {
+  font-family: var(--ternary-font);
+  font-style: normal;
+  color: var(--color-white);
+}
+
+.festival-numbers > div h2 {
+  font-weight: 700;
+  font-size: 3.8rem;
+  line-height: 3.4rem;
+}
+.festival-numbers > div h3 {
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 3.9rem;
+}
+
+.festival-numbers .listeners h3, .festival-numbers .listeners h2,
+.festival-numbers .artists h3, .festival-numbers .artists h2,
+.festival-numbers .concerts h3, .festival-numbers .concerts h2{
+
+    @media only screen and (max-width: $bp-md) {
+       color: var(--color-darkest);
+       
+            }
+
+}

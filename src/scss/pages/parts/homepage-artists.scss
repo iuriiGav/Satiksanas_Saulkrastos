@@ -1,0 +1,86 @@
+.homepage-artists {
+  background: linear-gradient(180deg, #c4c4c4 0%, rgba(255, 255, 255, 0) 100%),
+    #bbbbbb;
+    position: relative;
+    padding: 5rem;
+}
+
+.gallery-wrapper{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:10px;
+    grid-auto-flow: dense;
+        @media only screen and (max-width: $bp-lg) {
+            grid-template-columns: repeat(2,1fr);
+        }
+}
+
+.gallery-item{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.gallery-item .image{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.gallery-item .image img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position:50% 50%;
+    cursor:pointer;
+    transition:.5s ease-in-out;
+}
+.gallery-item:hover .image img{
+    transform:scale(1.1);
+}
+
+.artist-name {
+    position:absolute;
+    cursor: pointer;
+    bottom: 0;
+    right: 0;
+    color: var(--color-almost-white-blue);
+    padding: 2em;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 40%, #000000 100%);
+    @media only screen and (max-width: $bp-sm) {
+        flex-direction: column;
+        padding: 1em 0 1em 0;
+    }
+
+    & h3 {
+        font-family: var(--font-secondary);
+        font-style: normal;
+font-weight: 900;
+font-size: 2.1rem;
+line-height: 20px;
+    @media only screen and (max-width: $bp-lg) {
+        font-size: 1.9rem;
+    }
+    @media only screen and (max-width: $bp-sm) {
+        font-size: 1.8rem;
+    }
+    }
+
+   & p {
+        font-family: var(--font-secondary);
+        font-style: normal;
+font-weight: 500;
+font-size: 1.5rem;
+line-height: 20px;
+color: var(--color-brand-direct);
+
+@media only screen and (max-width: $bp-lg) {
+    font-size: 1.3rem;
+}
+@media only screen and (max-width: $bp-sm) {
+    font-size: 1.5rem;
+}
+    }
+}

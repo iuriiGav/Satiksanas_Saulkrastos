@@ -1,0 +1,262 @@
+<?php get_header(); ?>
+
+
+<?php while (have_posts()) : the_post(); ?>
+
+    <main>
+        <section style="background-image: linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, .3) 30%), url(<?php echo get_the_post_thumbnail_url() ?>);" class="hero d-flex justify-content-end align-items-end">
+
+            <h2 class="fest-date" style="color: white;"><?php esc_html_e(get_field('homepage_festival_dates'), 'satiksanos-saulkrastos') ?></h2>
+        </section>
+
+        <section class="homepage-concerts container-fluid p-4">
+
+            <div class="row gx-5">
+                <div class="col-sm-9 d-flex justify-content-center  flex-column align-items-center">
+                    <h4 class="section-header section-header--upcoming"><?php esc_html_e(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos')?></h4>
+
+
+                    <!-- original concert card begins -->
+                    <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
+                        <div class="row flex-wrap align-items-center  w-100">
+                            <div class="col-md-2 col-6 concert-date">
+                                <h4 class="date-number">7</h4>
+                                <h5 class="date-month">augusts</h5>
+                            </div>
+                            <div class="col-md-4 text-center d-flex order-3 order-md-2   justify-content-center concert-program">
+                                <p class="mb-0">Concert program name here</p>
+                            </div>
+                            <div class="col-md-1 col-6 order-2 order-md-3 d-flex justify-content-center concert-time">
+                                <h3 class="mb-0">16:00</h3>
+                            </div>
+
+                            <div class="col-md-3 d-flex order-4 justify-content-center concert-venue">
+                                <p>Saulkrasti Baznica</p>
+                            </div>
+                            <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
+                                <button class="btn btn-primary-ig btn-lg w-100">get tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- original concert card ends. Followed text coppies -->
+
+
+                    <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
+                        <div class="row flex-wrap align-items-center  w-100">
+                            <div class="col-lg-2 col-6 concert-date">
+                                <h4 class="date-number">7</h4>
+                                <h5 class="date-month">augusts</h5>
+                            </div>
+                            <div class="col-lg-4 text-center d-flex order-3 order-lg-2   justify-content-center concert-program">
+                                <p class="mb-0">Concert program name here</p>
+                            </div>
+                            <div class="col-lg-1 col-6 order-2 order-lg-3 d-flex justify-content-center concert-time">
+                                <h3 class="mb-0">16:00</h3>
+                            </div>
+
+                            <div class="col-lg-3 d-flex order-4 justify-content-center concert-venue">
+                                <p>Saulkrasti Baznica</p>
+                            </div>
+                            <div class="col-lg-2 d-flex order-5 justify-content-center concert-action-btn">
+                                <button class="btn btn-primary-ig btn-lg w-100 disabled">sold-out</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concert-card concert-card__long align-content-center justify-content-around">
+                        <div class="row flex-wrap align-items-center  w-100">
+                            <div class="col-md-2 col-6 concert-date">
+                                <h4 class="date-number">7</h4>
+                                <h5 class="date-month">augusts</h5>
+                            </div>
+                            <div class="col-md-4 text-center d-flex order-3 order-md-2   justify-content-center concert-program">
+                                <p class="mb-0">Concert program name here</p>
+                            </div>
+                            <div class="col-md-1 col-6 order-2 order-md-3 d-flex justify-content-center concert-time">
+                                <h3 class="mb-0">16:00</h3>
+                            </div>
+
+                            <div class="col-md-3 d-flex order-4 justify-content-center concert-venue">
+                                <p>Saulkrasti Baznica</p>
+                            </div>
+                            <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
+                                <button class="btn btn-primary-ig btn-lg w-100">get tickets</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="see-more-container d-flex">
+
+                        <h5 class="more-concerts">& 3 <?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_text'), 'satiksanos-saulkrastos') ?></h5>
+                        <button class="btn btn-primary-ig btn-primary-ig--long"><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_button_text'), 'satiksanos-saulkrastos') ?></button>
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-2 homepage-concerts__map-of-venues d-flex align-items-center">
+                    <img src="<?php echo wp_get_attachment_image_src(get_field('homepage_map_of_venues'), 'full')[0] ?>" alt="<?php echo get_post_meta(get_field('homepage_map_of_venues'), '_wp_attachment_image_alt', TRUE); ?>" class="homepage-map">
+                    <div class="marker-wrapper">
+
+                        <svg class="map-marker" width="50" height="53" viewBox="0 0 50 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0)">
+                                <path d="M24.8056 1.57075e-06C34.7129 7.04635e-07 42.7729 8.52571 42.773 19.0052C42.773 32.0105 26.694 51.1031 26.0094 51.9095C25.3664 52.6671 24.2437 52.6658 23.6019 51.9095C22.9173 51.1031 6.83834 32.0105 6.83833 19.0052C6.83853 8.52571 14.8985 2.43686e-06 24.8056 1.57075e-06ZM24.8056 28.5672C29.7902 28.5672 33.8454 24.2777 33.8454 19.0052C33.8454 13.7326 29.7901 9.44324 24.8056 9.44324C19.8212 9.44325 15.766 13.7327 15.766 19.0053C15.766 24.2778 19.8212 28.5672 24.8056 28.5672Z" fill="#F69333" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0">
+                                    <rect width="49.6112" height="52.4773" fill="white" transform="matrix(-1 8.74228e-08 8.74228e-08 1 49.6113 0)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section class="homepage-about-us" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('homepage_about_us_section_cover_image'), 'full')[0] ?>);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    ">
+
+            <h4 class="section-header text-center p-4">ABOUT US</h4>
+
+
+            <div class="row position-relative">
+                <!-- <div class="col-md-6"> </div> -->
+
+                <div class="col-md-6 about-text-card d-flex align-items-center">
+                    <p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo quo culpa eos molestiae, illo nemo temporibus repellendus, totam recusandae ipsam veritatis asperiores dicta praesentium sed exercitationem iste, magnam inventore quaerat? </p>
+                </div>
+                <div class="col-md-6 offset-md-6 offset-xs-6 homepage-aboutus-gallery-container d-flex justify-content-center align-items-center">
+                    <!-- Slider main container -->
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+
+<?php if(have_rows('homepage_about_us_short_gallery_photos')) : while(have_rows('homepage_about_us_short_gallery_photos')) : the_row();
+$image = get_sub_field('photo');
+?>
+
+
+                            <!-- Slides -->
+                            <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full') [0])?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
+<?php endwhile; endif; ?>
+                         
+                        </div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                        <!-- If we need scrollbar -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center festival-numbers">
+
+            <?php if(have_rows('homepage_about_us_numbers_to_impress')) : while(have_rows('homepage_about_us_numbers_to_impress')) : the_row();
+
+?>
+                <div class="<?php the_sub_field('class')?>">
+                    <h3 class=""><?php the_sub_field('text') ?></h3>
+                    <h2 class=""><?php the_sub_field('number') ?></h2>
+                </div>
+
+<?php endwhile; endif; ?>
+
+
+            
+            </div>
+        </section>
+        <section class="homepage-artists">
+            <h4 class="section-header text-center">ARTISTS</h4>
+            <div class="gallery-wrapper">
+
+            <?php
+
+            $artists = get_post_gallery(11, false);
+            $count = 0;
+            $gallery_img_ids = explode(',', $artists['ids']);
+            
+            foreach ($gallery_img_ids as $id) :
+                $count++;
+                $image = wp_get_attachment_image_src($id, 'square'); ?>
+
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <div class="image">
+
+                                <img class="position-relative img-<?php echo $count ?>" src="<?php echo $image[0] ?>" alt="">
+                                <div class="artist-name d-flex justify-content-center">
+                                    <h3 class="name"><?php echo get_the_title($id) ?></h3>
+                                    <p class="instrument"><?php echo wp_get_attachment_caption($id) ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <?php endforeach; ?>
+                </div>
+
+
+
+
+
+        </section>
+
+
+        <section class="contact-us" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('homepage_contact_us_section_cover_image'), 'full')[0] ?>);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    ">
+            <h4 class="section-header text-center">CONTACT US</h4>
+
+
+    <?php echo do_shortcode(get_field('homepage_contact_form_shortcode'))  ?>
+    
+        </section>
+
+        <section class="sponsors d-flex justify-content-around">
+
+
+
+        <?php
+
+$logos = get_post_gallery(65, false);
+$logo_ids = explode(',', $logos['ids']);
+
+
+
+foreach ($logo_ids as $id) :
+    $logo = wp_get_attachment_image_src($id, ''); ?>
+
+   <a href="">
+       <img src="<?php echo $logo[0] ?>" alt="" class="img-fluid sponsor-logo">
+
+   </a>
+
+        
+        <?php endforeach; ?>
+        </section>
+    </main>
+
+<?php endwhile; ?>
+
+<h5 style='color: red; font-style: italic;'> <?php echo 'this is from ' . basename(__FILE__); ?></h5>
+<?php get_footer(); ?>
+
+

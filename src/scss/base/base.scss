@@ -1,0 +1,36 @@
+// breakpoints
+
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+
+
+html {
+    min-width: 300px;
+}
+body {
+
+}
+.container-fluid {
+    overflow: hidden;
+
+}
+
+@media only screen and (max-width: 1460px) {
+    html {
+      font-size: 55.5%;
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    html {
+      font-size: 50.5%;
+    }
+  }
+  @media only screen and (max-width: 1150px) {
+    html {
+      font-size: 45.5%;
+    }
+  }
