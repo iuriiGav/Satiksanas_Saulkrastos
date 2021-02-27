@@ -3,6 +3,9 @@
     #bbbbbb;
     position: relative;
     padding: 5rem;
+    & .section-header {
+        padding: 5rem;
+    }
 }
 
 .gallery-wrapper{
@@ -56,6 +59,7 @@
 
     & h3 {
         font-family: var(--font-secondary);
+        margin-bottom: -.7rem;
         font-style: normal;
 font-weight: 900;
 font-size: 2.1rem;

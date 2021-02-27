@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="col-md-3 d-flex order-4 justify-content-center concert-venue">
-                                <p>Saulkrasti Baznica</p>
+                                <p class="mb-0">Saulkrasti Baznica</p>
                             </div>
                             <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
                                 <button class="btn btn-primary-ig btn-lg w-100">get tickets</button>
@@ -97,7 +97,7 @@
 
 
                 <div class="col-sm-2 homepage-concerts__map-of-venues d-flex align-items-center">
-                    <img src="<?php echo wp_get_attachment_image_src(get_field('homepage_map_of_venues'), 'full')[0] ?>" alt="<?php echo get_post_meta(get_field('homepage_map_of_venues'), '_wp_attachment_image_alt', TRUE); ?>" class="homepage-map">
+                    <img src="<?php echo esc_url(wp_get_attachment_image_src(get_field('homepage_map_of_venues'), 'full')[0]) ?>" alt="<?php echo get_post_meta(get_field('homepage_map_of_venues'), '_wp_attachment_image_alt', TRUE); ?>" class="homepage-map">
                     <div class="marker-wrapper">
 
                         <svg class="map-marker" width="50" height="53" viewBox="0 0 50 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,20 +127,21 @@
     background-attachment: fixed;
     ">
 
-            <h4 class="section-header text-center p-4">ABOUT US</h4>
+            <h4 class="section-header text-center p-4"><?php esc_html_e(get_field('homepage_about_us_section_title'), 'satiksanos-saulkrastos'); ?></h4>
 
 
             <div class="row position-relative">
                 <!-- <div class="col-md-6"> </div> -->
 
                 <div class="col-md-6 about-text-card d-flex align-items-center">
-                    <p class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo quo culpa eos molestiae, illo nemo temporibus repellendus, totam recusandae ipsam veritatis asperiores dicta praesentium sed exercitationem iste, magnam inventore quaerat? </p>
+                    <p class=""> <?php esc_html_e(get_field('homepage_about_us_section_short_text'), 'satiksanos-saulkrastos') ?> </p>
                 </div>
                 <div class="col-md-6 offset-md-6 offset-xs-6 homepage-aboutus-gallery-container d-flex justify-content-center align-items-center">
                     <!-- Slider main container -->
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
+                        
 
 <?php if(have_rows('homepage_about_us_short_gallery_photos')) : while(have_rows('homepage_about_us_short_gallery_photos')) : the_row();
 $image = get_sub_field('photo');
@@ -175,40 +176,54 @@ $image = get_sub_field('photo');
 
 <?php endwhile; endif; ?>
 
+<?php
+    $args = array(
 
+        'post_type' => 'artists',
+        'posts_per_page' => 10,
+
+    );
+
+
+    $current_artists = new WP_Query($args); ?>  ?>
+
+    
             
             </div>
         </section>
         <section class="homepage-artists">
-            <h4 class="section-header text-center">ARTISTS</h4>
+            <h4 class="section-header text-center"><?php esc_html_e(get_field('homepage_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
             <div class="gallery-wrapper">
 
-            <?php
 
-            $artists = get_post_gallery(11, false);
-            $count = 0;
-            $gallery_img_ids = explode(',', $artists['ids']);
-            
-            foreach ($gallery_img_ids as $id) :
-                $count++;
-                $image = wp_get_attachment_image_src($id, 'square'); ?>
+            <?php if ($current_artists->have_posts()) : while ($current_artists->have_posts()) : $current_artists->the_post(); ?>
+
+        <?php
+       $artist_id = get_the_id();
+        ?>
+
+    
 
                     <div class="gallery-container">
                         <div class="gallery-item">
                             <div class="image">
+<a href="<?php echo esc_url(get_permalink())?>">
 
-                                <img class="position-relative img-<?php echo $count ?>" src="<?php echo $image[0] ?>" alt="">
+                                <img class="position-relative img-<?php echo 'some-unic-id' ?>" src="<?php echo esc_url(get_the_post_thumbnail_url( $artist_id, 'square'))?>" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
                                 <div class="artist-name d-flex justify-content-center">
-                                    <h3 class="name"><?php echo get_the_title($id) ?></h3>
-                                    <p class="instrument"><?php echo wp_get_attachment_caption($id) ?></p>
+                                    <h3 class="name"><?php esc_html_e( get_the_title($artist_id) , 'satiksanos-saulkrastos') ?></h3>
+                                    <p class="instrument">(<?php esc_html_e(get_field('post_artist_artist_instrument'), 'satiksanos-saulkrastos') ?>)</p>
                                 </div>
+</a>
                             </div>
                         </div>
                     </div>
 
+                    <?php endwhile; wp_reset_postdata(); endif; ?>
+
+
                     
-                    <?php endforeach; ?>
-                </div>
+                </div><!-- .gallery-wrapper -->
 
 
 

@@ -1,0 +1,44 @@
+.artist-post {
+    height: 100%;
+    padding-right: 5rem;
+}
+
+.artist .artist-photo {
+margin-top: 140px;
+position: fixed;
+text-align: center;
+padding: 0 5rem 0 5rem;
+
+& img {
+    display: inline-block;
+margin-bottom: 5rem;
+
+}
+}
+
+.artist .artist-bio{
+margin-top: 110px;
+margin-right: 5rem;
+padding: 5rem;
+text-align: justify;
+font-weight: normal;
+font-size: 2rem;
+line-height: 3.4rem;
+color: var(--color-darkest);
+
+text-align: justify;
+background-color: var(--color-brand-muted);
+
+}
+
+section.artist .artist-bio .artist-name-title {
+    text-align: center;
+    color: var(--color-almost-white-blue);
+    font-family: var(--secondary-font);
+    font-weight: 500;
+font-size: 2.8rem;
+line-height: 3.2rem;
+& span.instrument {
+    font-size: 2rem;
+}
+}

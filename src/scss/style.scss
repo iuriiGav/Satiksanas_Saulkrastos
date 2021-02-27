@@ -13,8 +13,8 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 $navbar-light-active-color:  --color-almost-white-blue;
 $navbar-toggler-focus-width: 0;
-$headings-margin-bottom: 0;
-$paragraph-margin-bottom: 0;
+// $headings-margin-bottom: 0;
+// $paragraph-margin-bottom: 0;
 
 @import "./utils/reset.scss";
 @import "./base/base.scss";
@@ -28,6 +28,6 @@ $paragraph-margin-bottom: 0;
 @import "./components/swiper-gallery";
 @import "./components/buttons.scss";
 @import "./components/logo-footer";
-
+@import "./posts/artists";
 
 @import "./utils/utils"

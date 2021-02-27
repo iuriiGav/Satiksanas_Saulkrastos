@@ -32,94 +32,15 @@
         }
     }
 
-    & .concert-card__long {
-        width: 100%;
-        margin-left: 10em;
-        z-index: 2;
-            @media only screen and (max-width: $bp-sm) {
-                width:80%;
-                margin-left: 5em;
-                margin-right: 10em;
-            }
-    }
+ 
 
-    & .concert-date {
-        display: flex;
-justify-content: center;
- align-items: center;
- flex-direction: column;
- @media only screen and (max-width: $bp-md) {
-    flex-direction: row;
-    
-}
-    }
 
-    & .concert-date h4{
-font-family: var(--secondary-font);
-font-size:  3rem;
-font-weight: 500;
 
-    @media only screen and (max-width: 1200px) {
-        font-size: 2.6rem;
-    }
-    @media only screen and (max-width: $bp-md) {
-      padding-right: .2em;
-      
-    }
-    }
-    & .concert-date h5{
-font-size:  2.3rem;
-@media only screen and (max-width: 1200px) {
-    font-size: 2.2rem;
-}
-    }
-    & .concert-program {
-        font-size: 2.2rem;
-        font-weight: 400;
-        @media only screen and (max-width: 1200px) {
-            font-size: 2rem;
-        }
-        @media only screen and (max-width: $bp-md) {
-            margin-top: .5em;
-            margin-bottom: .5em;
-        }
-    }
 
-    & .concert-time h3{
-        font-family: var(--secondary-font);
-font-size:  3rem;
-font-weight: 500;
-@media only screen and (max-width: 1200px) {
-    font-size: 2.7rem;
-}
-    }
-    & .concert-venue {
-        font-size: 2.4rem;
-        font-weight: 400;
-        @media only screen and (max-width: 1200px) {
-            font-size: 2.2rem;
-        }
-    }
 
-    & .btn-primary-ig {
-        background: black;
-        height: 3.4em;
-        margin: 1em;
-        border-radius: 5px;
-        color: var(--color-brand-direct);
-        font-size: 2.3rem;
-        font-weight: 600;
-        @media only screen and (max-width: 1200px) {
-            font-size: 2.1rem;
-        }
-        &--long {
-            background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
-border-radius: 5px;
-            width: 6em;
-            height: initial;
-            color: var(--color-darkest);
-        }
-    }
+
+
+ 
 
     & .see-more-container {
         padding: 2em;
