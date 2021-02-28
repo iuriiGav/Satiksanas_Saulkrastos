@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header(); 
+include 'inc/getAllArtists.php'
+
+?>
 
 
 <?php while (have_posts()) : the_post(); ?>
@@ -6,14 +9,14 @@
     <main>
         <section style="background-image: linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, .3) 30%), url(<?php echo get_the_post_thumbnail_url() ?>);" class="hero d-flex justify-content-end align-items-end">
 
-            <h2 class="fest-date" style="color: white;"><?php esc_html_e(get_field('homepage_festival_dates'), 'satiksanos-saulkrastos') ?></h2>
+            <h2 class="fest-date text-lg-thin" style="color: white;"><?php esc_html_e(get_field('homepage_festival_dates'), 'satiksanos-saulkrastos') ?></h2>
         </section>
 
         <section class="homepage-concerts container-fluid p-4">
 
             <div class="row gx-5">
                 <div class="col-sm-9 d-flex justify-content-center  flex-column align-items-center">
-                    <h4 class="section-header section-header--upcoming"><?php esc_html_e(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos')?></h4>
+                    <h4 class="section-header section-header--dark section-header--upcoming"><?php esc_html_e(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
 
 
                     <!-- original concert card begins -->
@@ -127,31 +130,32 @@
     background-attachment: fixed;
     ">
 
-            <h4 class="section-header text-center p-4"><?php esc_html_e(get_field('homepage_about_us_section_title'), 'satiksanos-saulkrastos'); ?></h4>
+            <h4 class="section-header section-header--light text-center p-4"><?php esc_html_e(get_field('homepage_about_us_section_title'), 'satiksanos-saulkrastos'); ?></h4>
 
 
             <div class="row position-relative">
                 <!-- <div class="col-md-6"> </div> -->
 
                 <div class="col-md-6 about-text-card d-flex align-items-center">
-                    <p class=""> <?php esc_html_e(get_field('homepage_about_us_section_short_text'), 'satiksanos-saulkrastos') ?> </p>
+                    <p class="text-font-ternary text-md-normal"> <?php esc_html_e(get_field('homepage_about_us_section_short_text'), 'satiksanos-saulkrastos') ?> </p>
                 </div>
                 <div class="col-md-6 offset-md-6 offset-xs-6 homepage-aboutus-gallery-container d-flex justify-content-center align-items-center">
                     <!-- Slider main container -->
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
-                        
-
-<?php if(have_rows('homepage_about_us_short_gallery_photos')) : while(have_rows('homepage_about_us_short_gallery_photos')) : the_row();
-$image = get_sub_field('photo');
-?>
 
 
-                            <!-- Slides -->
-                            <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full') [0])?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
-<?php endwhile; endif; ?>
-                         
+                            <?php if (have_rows('homepage_about_us_short_gallery_photos')) : while (have_rows('homepage_about_us_short_gallery_photos')) : the_row();
+                                    $image = get_sub_field('photo');
+                            ?>
+
+
+                                    <!-- Slides -->
+                                    <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
+                            <?php endwhile;
+                            endif; ?>
+
                         </div>
 
                         <!-- If we need navigation buttons -->
@@ -166,64 +170,30 @@ $image = get_sub_field('photo');
 
             <div class="row text-center festival-numbers">
 
-            <?php if(have_rows('homepage_about_us_numbers_to_impress')) : while(have_rows('homepage_about_us_numbers_to_impress')) : the_row();
+                <?php if (have_rows('homepage_about_us_numbers_to_impress')) : while (have_rows('homepage_about_us_numbers_to_impress')) : the_row();
 
-?>
-                <div class="<?php the_sub_field('class')?>">
-                    <h3 class=""><?php the_sub_field('text') ?></h3>
-                    <h2 class=""><?php the_sub_field('number') ?></h2>
-                </div>
+                ?>
+                        <div class="<?php the_sub_field('class') ?> text-color-white">
+                            <h3 class="large-info-text"><?php the_sub_field('text') ?></h3>
+                            <h2 class="large-info-num"><?php the_sub_field('number') ?></h2>
+                        </div>
 
-<?php endwhile; endif; ?>
-
-<?php
-    $args = array(
-
-        'post_type' => 'artists',
-        'posts_per_page' => 10,
-
-    );
+                <?php endwhile;
+                endif; ?>
 
 
-    $current_artists = new WP_Query($args); ?>  ?>
 
-    
-            
+
             </div>
         </section>
         <section class="homepage-artists">
-            <h4 class="section-header text-center"><?php esc_html_e(get_field('homepage_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
-            <div class="gallery-wrapper">
-
-
-            <?php if ($current_artists->have_posts()) : while ($current_artists->have_posts()) : $current_artists->the_post(); ?>
-
-        <?php
-       $artist_id = get_the_id();
-        ?>
-
-    
-
-                    <div class="gallery-container">
-                        <div class="gallery-item">
-                            <div class="image">
-<a href="<?php echo esc_url(get_permalink())?>">
-
-                                <img class="position-relative img-<?php echo 'some-unic-id' ?>" src="<?php echo esc_url(get_the_post_thumbnail_url( $artist_id, 'square'))?>" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
-                                <div class="artist-name d-flex justify-content-center">
-                                    <h3 class="name"><?php esc_html_e( get_the_title($artist_id) , 'satiksanos-saulkrastos') ?></h3>
-                                    <p class="instrument">(<?php esc_html_e(get_field('post_artist_artist_instrument'), 'satiksanos-saulkrastos') ?>)</p>
-                                </div>
-</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php endwhile; wp_reset_postdata(); endif; ?>
-
-
-                    
-                </div><!-- .gallery-wrapper -->
+            <h4 class="section-header section-header--dark text-center"><?php esc_html_e(get_field('homepage_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
+            
+            
+            <?php getAllArtists ('post_artist_is_this_artist_participating_this_year', 'is_this_artist_participating_this_year_yes', true)  ?>
+            
+            
+        
 
 
 
@@ -238,34 +208,34 @@ $image = get_sub_field('photo');
     background-position: center center;
     background-attachment: fixed;
     ">
-            <h4 class="section-header text-center">CONTACT US</h4>
+            <h4 class="section-header section-header--light text-font-secondary text-lg-bold text-color-light text-center">CONTACT US</h4>
 
 
-    <?php echo do_shortcode(get_field('homepage_contact_form_shortcode'))  ?>
-    
+            <?php echo do_shortcode(get_field('homepage_contact_form_shortcode'))  ?>
+
         </section>
 
         <section class="sponsors d-flex justify-content-around">
 
 
 
-        <?php
+            <?php
 
-$logos = get_post_gallery(65, false);
-$logo_ids = explode(',', $logos['ids']);
+            $logos = get_post_gallery(65, false);
+            $logo_ids = explode(',', $logos['ids']);
 
 
 
-foreach ($logo_ids as $id) :
-    $logo = wp_get_attachment_image_src($id, ''); ?>
+            foreach ($logo_ids as $id) :
+                $logo = wp_get_attachment_image_src($id, ''); ?>
 
-   <a href="">
-       <img src="<?php echo $logo[0] ?>" alt="" class="img-fluid sponsor-logo">
+                <a href="">
+                    <img src="<?php echo $logo[0] ?>" alt="" class="img-fluid sponsor-logo">
 
-   </a>
+                </a>
 
-        
-        <?php endforeach; ?>
+
+            <?php endforeach; ?>
         </section>
     </main>
 
@@ -273,5 +243,3 @@ foreach ($logo_ids as $id) :
 
 <h5 style='color: red; font-style: italic;'> <?php echo 'this is from ' . basename(__FILE__); ?></h5>
 <?php get_footer(); ?>
-
-

@@ -1,31 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
 :root {
-    --main-font: Raleway, sans-serif;
-    --secondary-font: Roboto, sans-serif;
-    --ternary-font: 'Playfair Display', sans-serif;
+  --main-font: Raleway, sans-serif;
+  --secondary-font: Roboto, sans-serif;
+  --ternary-font: "Playfair Display", sans-serif;
 }
 
 body {
-    font-family: var(--main-font);
-    font-weight: 400;
+  font-family: var(--main-font);
+  font-weight: 400;
 }
 
 .section-header {
-    position: relative;
-    z-index: 4;
-    font-family: var(--secondary-font);
-    font-weight: 500;
-    font-size: 4rem;
+  position: relative;
+  z-index: 4;
+  font-family: var(--secondary-font);
+  font-size: 4rem;
+  font-weight: 500;
+  &--light {
+    color: var(--color-almost-white-blue);
+  }
 
-    &--upcoming {
-        color: var(--color-almost-white-blue);
-        margin-top: 1.4em;
-        margin-bottom: 2em;
-            @media only screen and (max-width: $bp-sm) {
-                word-spacing: 40rem;
-            }
+  &--dark {
+    color: var(--color-darkest);
+  }
+  &--upcoming {
+    margin-top: 1.4em;
+    margin-bottom: 2em;
+    @media only screen and (max-width: $bp-sm) {
+      word-spacing: 40rem;
     }
+  }
+
+  &__bigger {
+
+    @media only screen and (max-width: $bp-md) {
+      font-size: 5rem;
+      font-weight: 700;
+      letter-spacing: .4rem;
+
+      &--light {
+        color: var(--color-almost-white-blue);
+      }
+    }
+
+  }
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+.text-long {
+    color: var(--color-darkest);
+  font-size: 2.1rem;
+  text-align: justify;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.9rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.8rem;
+  }
+
+  &--normal {
+    font-weight: 400;
+  }
+  &--medium {
+    font-weight: 500;
+  }
+}
+
+.large-info-text {
+  font-family: var(--ternary-font);
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 3.9rem;
+}
+
+.large-info-num {
+  font-family: var(--ternary-font);
+  font-weight: 700;
+  font-size: 3.8rem;
+  line-height: 3.4rem;
+}
+
+
+
+
+.text-lg-thin {
+  font-size: 5.4rem;
+  @media only screen and (max-width: 840px) {
+    font-size: 2.8rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 2.3rem;
+  }
+}
+
+.text-lg-bold {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.text-xxl {
+  font-size: 3.9rem;
+  @media only screen and (max-width: $bp-md) {
+    font-size: 3.1rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 2.5rem;
+  }
+}
+.text-md-lg {
+  font-size: 3.1rem;
+  @media only screen and (max-width: $bp-md) {
+    font-size: 2.5rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 2rem;
+  }
+}
+
+.text-md-normal {
+  font-size: 2.4rem;
+  @media only screen and (max-width: $bp-xl) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-md) {
+    font-size: 2.4rem;
+  }
+}
+
+.text-md-small {
+  font-size: 2.1rem;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.9rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.8rem;
+  }
+}
+
+.text-small {
+  font-size: 1.5rem;
+  color: var(--color-brand-direct);
+
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.3rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================TEXT COLORS========================= */
+
+.text-color-white {
+  color: var(--color-white);
+}
+
+.text-color-light {
+  color: var(--color-almost-white-blue);
+}
+
+.text-color-light-tint {
+  color: var(--color-almost-white-yellow);
+}
+
+.text-color-darkest {
+  color: var(--color-darkest);
+}
+
+.text-color-brand-direct {
+  color: var(--color-brand-direct);
+}
+
+/* =========================TEXT FONTS========================= */
+.text-font-primary {
+  font-family: var(--main-font);
+}
+
+.text-font-secondary {
+  font-family: var(--secondary-font);
+}
+.text-font-ternary {
+  font-family: var(--ternary-font);
+}
+
+/* ======================FONT WEIGHTS========================= */
+
+.text-heavy {
+  font-weight: 900;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-normal {
+  font-weight: 400;
+}
+
+.text-thin {
+  font-weight: 100;
+}
+
+.text-justify {
+    text-align: justify;
 }

@@ -1,44 +1,85 @@
 .artist-post {
-    height: 100%;
-    padding-right: 5rem;
+  min-height: 100vh;
+  height: 100%;
+  padding-right: 5rem;
+  @media only screen and (max-width: $bp-md) {
+    padding: 3rem;
+  }
 }
 
 .artist .artist-photo {
-margin-top: 140px;
-position: fixed;
-text-align: center;
-padding: 0 5rem 0 5rem;
+  margin-top: 140px;
+  position: fixed;
 
-& img {
+  text-align: center;
+  padding: 0 5rem 0 5rem;
+
+  @media only screen and (max-width: $bp-md) {
+    padding: 0;
+
+    position: relative;
+  }
+
+  & img {
     display: inline-block;
-margin-bottom: 5rem;
-
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
 }
-}
 
-.artist .artist-bio{
-margin-top: 110px;
-margin-right: 5rem;
-padding: 5rem;
-text-align: justify;
-font-weight: normal;
-font-size: 2rem;
-line-height: 3.4rem;
-color: var(--color-darkest);
+.artist .artist-bio {
+  margin-top: 110px;
+  margin-right: 5rem;
+  padding: 5rem;
+  background-color: var(--color-brand-muted);
 
-text-align: justify;
-background-color: var(--color-brand-muted);
-
+  text-align: justify;
+  line-height: 3.4rem;
+  @media only screen and (max-width: $bp-md) {
+    margin-right: 0;
+    margin-top: 4rem;
+    padding: 2rem;
+  }
 }
 
 section.artist .artist-bio .artist-name-title {
-    text-align: center;
-    color: var(--color-almost-white-blue);
-    font-family: var(--secondary-font);
-    font-weight: 500;
-font-size: 2.8rem;
-line-height: 3.2rem;
-& span.instrument {
+  text-align: center;
+
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  & span.instrument {
     font-size: 2rem;
+  }
+  &--desctop {
+    @media only screen and (max-width: $bp-md) {
+      display: none;
+    }
+  }
+
 }
+
+.artist-name-title--mobile {
+  display: none;
+  @media only screen and (max-width: $bp-md) {
+    display: block;
+  }
+}
+
+.concert-date-box {
+  display: inline-block;
+  padding: 1.6em;
+  background-color: var(--color-brand-direct);
+  border-radius: 5px;
+}
+
+.artists-concert-in-artist-page--desctop {
+  @media only screen and (max-width: $bp-md) {
+    display: none;
+  }
+}
+.artists-concert-in-artist-page--mobile {
+  display: none;
+  @media only screen and (max-width: $bp-md) {
+    display: block;
+  }
 }

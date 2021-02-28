@@ -7,3 +7,17 @@ padding: 0 3em;
     padding: 0 1.2em;
 }
 }
+
+.top-header-padding {
+    padding-top: 15rem;
+}
+
+.more-padding-bottom {
+    padding-bottom: 8rem;
+        @media only screen and (max-width: $bp-md) {
+            padding-bottom: 2rem;
+        }
+}
+.more-padding-header-top {
+    padding-top: 20rem;
+}

@@ -1,6 +1,7 @@
 console.log('hello')
 
 import bootstrap from 'bootstrap';
+import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 
   // import Swiper bundle with all modules installed
   import Swiper from '../../node_modules/swiper/swiper-bundle';
@@ -51,6 +52,15 @@ if ($('.smart-scroll').length > 0) { // check if element exists
         last_scroll_top = scroll_top;
     });
 }
+
+
+lightbox.option({
+  'resizeDuration': 300,
+  'fadeDuration' : 700,
+  'alwaysShowNavOnTouchDevices' : true,
+
+
+})
 
 
 })

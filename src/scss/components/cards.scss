@@ -38,12 +38,34 @@
     @media only screen and (max-width: $bp-md) {
       padding-right: 0.2em;
     }
+
   }
 
   & h5 {
     font-size: 2.3rem;
     @media only screen and (max-width: 1200px) {
       font-size: 2.2rem;
+    }
+  }
+
+  &--text-small {
+    &  h4 {
+      font-size: 2.2rem;
+    
+      @media only screen and (max-width: 1200px) {
+        font-size: 2rem;
+      }
+      @media only screen and (max-width: $bp-md) {
+        padding-right: 0.2em;
+      }
+  
+    }
+  
+    & h5 {
+      font-size: 2rem;
+      @media only screen and (max-width: 1200px) {
+        font-size: 1.9rem;
+      }
     }
   }
   

@@ -17,9 +17,11 @@ function gymfitness_scripts()
 
     wp_enqueue_style('swipercss', 'https://unpkg.com/swiper/swiper-bundle.min.css', array(), '6.4.15');
 
+    // wp_enqueue_style('lightbox', get_template_directory_uri() . '/css/lightbox.min.css', array(), '2.11.3');
 
     /** Load JS Files */
     wp_enqueue_script('scripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true);
+        // wp_enqueue_script('lightboxjs',  get_template_directory_uri() . '/js/lightbox.min.js', array('jquery'), '2.11.3', true);
 
     wp_enqueue_script('swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js', array('jquery'), '6.4.15', true);
 
