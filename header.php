@@ -9,7 +9,7 @@
 <body <?php body_class(); ?>>
 
 
-<div class="container-fluid">
+<div id="all-wrapper" class="container-fluid">
 <nav class="navbar smart-scroll navbar-expand-md bg-dark">
     <div class="container-fluid mx-5">
 

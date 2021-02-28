@@ -62,11 +62,57 @@ z-index: 2;
 
 .history-page-past-artists-and-concerts {
    padding: 10rem;
+   width: 100%;
 position: relative;
 z-index: 3;
 margin-right: -5rem;
+display: flex;
+flex-direction: row;
 }
 
 .history-page-past-artists {
+    & h4 {
+        margin-bottom: 2rem;;
+    }
     width: 50%;
+    padding: 3rem;
+        @media only screen and (max-width: $bp-md) {
+            width: 100%;
+        }
+
+        &--mobile6 {
+            @media only screen and (max-width: $bp-md) {
+                grid-template-columns: 4;
+            }
+        }
+
+
+}
+
+.history-page-concerts {
+    padding: 3rem;
+& h4 {
+    margin-bottom: 2rem;;
+}
+}
+
+ .date-number--small {
+    font-size: 2rem;
+    
+}
+
+.date-month--small {
+
+    font-size: 1.8rem;
+}
+
+.btn-primary-ig__past {
+    margin: 0;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.concert-card__past {
+    background-color: white;
+    padding: 1rem;
 }

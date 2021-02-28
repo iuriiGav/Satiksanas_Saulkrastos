@@ -47,8 +47,8 @@ include 'inc/getAllArtists.php'
                     <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
                         <div class="row flex-wrap align-items-center  w-100">
                             <div class="col-lg-2 col-6 concert-date">
-                                <h4 class="date-number">7</h4>
-                                <h5 class="date-month">augusts</h5>
+                                <h4 class="date-number--small">7</h4>
+                                <h5 class="date-month--small">augusts</h5>
                             </div>
                             <div class="col-lg-4 text-center d-flex order-3 order-lg-2   justify-content-center concert-program">
                                 <p class="mb-0">Concert program name here</p>

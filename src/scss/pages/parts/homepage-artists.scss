@@ -30,6 +30,13 @@
         grid-template-columns: repeat(4,1fr);
     }
 
+    &--mobile-4 {
+        @media only screen and (max-width: $bp-md) {
+            grid-template-columns: repeat(4,1fr);
+        }
+    
+    }
+
         }
 }
 

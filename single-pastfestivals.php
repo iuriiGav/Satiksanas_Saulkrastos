@@ -65,21 +65,119 @@ include 'inc/backgorundImageAndGradient.php';
 
 
     <section class="history-page-past-artists-and-concerts" style=<?php setBackgroundImage(true, null, 'post_previous_the_year_artists_section_background_image')?>>
+      
+    <div class="row">
 
-        <div class="history-page-past-artists">
+    <div class=" history-page-past-artists">
 
             <h4 class="section-header section-header--dark text-center"><?php esc_html_e(get_field('post_previous_this_year_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
+            
+
             <?php
+             $historyOfArchive = get_field('history_year_of_archive');
+            ?>
+            
+            <?php
+$args = array(
 
-            $yearOfTHeQueriedFestival = get_field('history_year_of_archive');
-            getArtistForPastFestival($yearOfTHeQueriedFestival, true) ?>
+    'post_type' => 'artists',
+    'posts_per_page' => 100,
+
+);
 
 
-        </div>
+$current_artists = new WP_Query($args); ?>
+
+
+                <div class="gallery-wrapper">
+
+    <?php if ($current_artists->have_posts()) : while ($current_artists->have_posts()) : $current_artists->the_post(); ?>
+    
+                <?php
+                $artist_id = get_the_id();
+                ?>
+
+            
+
+             <?php 
+             
+             if( have_rows('post_artist_artist_participated_in_festival_during_these_years') ):
+
+                // Loop through rows.
+                while( have_rows('post_artist_artist_participated_in_festival_during_these_years') ) : the_row();
+                $year_artist_participated_in_the_past = get_sub_field('year_of_participation', $artist_id);
+
+           
+
+                
+                
+                                
+        
+           
+                if($year_artist_participated_in_the_past ===  $historyOfArchive) :
+
+              
+             ?>
 
 
 
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <div class="image">
+                                <a href="<?php echo esc_url(get_permalink()) ?>">
 
+                                    <img class="position-relative img-<?php echo 'some-unic-id' ?>" src="<?php echo esc_url(get_the_post_thumbnail_url($artist_id, 'square')) ?>" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
+                                   
+                                    <div class="artist-name text-center text-color-light d-flex justify-content-center">
+                                        <h3 class="name text-font-secondary text-heavy text-small text-color-light"><?php esc_html_e(get_the_title($artist_id), 'satiksanos-saulkrastos') ?></h3>
+                                        <!-- <p class="instrument text-color-brand-direct text-small">(<?php esc_html_e(get_field('post_artist_artist_instrument'), 'satiksanos-saulkrastos') ?>)</p> -->
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+<?php 
+//end of loop looking if the artist participated in the current year
+endif; ?>
+<?php 
+  // End loop repeater
+endwhile;
+
+
+    //  End if repeater
+endif;
+?>
+    <?php endwhile;
+        wp_reset_postdata();
+    endif; ?>
+    </div><!-- .gallery-wrapper -->
+      
+        </div> <!-- .history-page-past-artists -->
+
+        
+        
+        <div  class="col-md-6 history-page-concerts">
+
+        <h4 class="section-header section-header--dark text-center"><?php esc_html_e(get_field('post_previous_this_year_concerts_heading'), 'satiksanos-saulkrastos') ?></h4>
+
+                    <div  style="background: white;" class="d-flex concert-card__past flex-wrap align-items-center justify-content-around">
+                        <div class=" concert-date__past">
+                            <p class="date-number--small">7 augusts</p>
+                        </div>
+                        <div class=" concert-program__past">
+                            <p class="date-number--small">Concert program name here</p>
+                        </div>
+                      
+                        <div class="concert-action-btn__past">
+                            <button class="btn btn-primary-ig btn-primary-ig__past ">more info</button>
+                        </div>
+                    </div>
+                </div>
+
+    </div><!-- .row -->
 
     </section>
 
