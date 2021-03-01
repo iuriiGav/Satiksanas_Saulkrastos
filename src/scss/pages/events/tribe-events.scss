@@ -1,0 +1,192 @@
+.tribe-common {
+   
+    scroll-behavior: smooth;
+    overflow: hidden; // added for pseudo-element
+  position: relative; // added for pseudo-element
+  &::before {
+    content: " ";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url('images/Saulrieta_koncerts_forest.jpg');   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    will-change: transform;
+    z-index: -1;
+  }
+}
+
+div.tribe-events-calendar-list {
+    padding-top: 10rem;
+}
+
+.tribe-events-calendar-list__event-date-tag {
+    background-color: var(--color-brand-muted); 
+        @media only screen and (max-width: $bp-md) {
+            display: none;
+        }
+}
+
+.tribe-events-calendar-list__event-wrapper {
+    background: white;
+    padding: 3rem;
+}
+
+.tribe-common .tribe-common-g-row--gutters>.tribe-common-g-col {
+    padding-right: 0;
+}
+
+.tribe-events .tribe-events-calendar-list__event {
+    justify-content: inherit;
+}    
+
+.tribe-events .tribe-events-calendar-list__event-details {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+
+}
+
+#ig-tribe-events-read-more {
+    padding: 3rem 0 3rem 0 !important; 
+    margin-top: 3rem;
+    font-size: 2.1rem;
+    color: var(--color-brand-direct);
+    transition: all .3s;
+}
+.tribe-events-calendar-list__event-date-tag-datetime {
+    padding-top: 3rem !important;
+}
+#ig-tribe-events-read-more:hover {
+    text-decoration: underline;
+
+}
+
+
+.tribe-events .tribe-events-calendar-list__event-date-tag-datetime span{ 
+    font-family: var(--secondary-font) !important;
+font-size: 1.7rem;
+
+   
+}
+
+
+.tribe-events-calendar-list__event-title a {
+    font-family: var(--primary-font) !important;
+    color: var(--color-darkest)  !important;
+font-size: 2.3rem;
+text-shadow: 0 1px 2px rgba(22, 22, 22, 0.212);
+
+} 
+
+.tribe-events-calendar-list__event-venue span{
+font-family: var(--primary-font) !important;
+font-size: 1.5rem;
+}
+
+.tribe-common .tribe-common-b2 {
+
+font-family: var(--primary-font) !important; 
+}
+
+
+.tribe-events-calendar-list__event-description.tribe-common-b2.tribe-common-a11y-hidden p {
+    padding-bottom: 2rem !important;
+    color: var(--color-gray-dark);
+    opacity: .76;
+}
+
+
+.tribe-common .tribe-common-h6--min-medium {
+    font-size: 2rem !important; 
+    line-height: 2.2rem !important; 
+    color: var(--color-almost-white-blue)
+}
+
+.tribe-events-c-nav__next-label, .tribe-events .tribe-events-c-nav__next-label-plural {
+    font-size: 2rem;
+    line-height: 2.2rem; 
+    color: var(--color-almost-white-blue);
+    letter-spacing: .5rem;
+}
+
+
+
+.tribe-common .tribe-common-b1--min-medium {
+    font-size: 2rem !important; 
+    line-height: 2.2rem !important; 
+    color: var(--color-almost-white-blue);
+    letter-spacing: .5rem;
+}
+
+
+.tribe-events .tribe-events-c-nav__prev-icon-svg {
+   display: none;
+
+}
+
+.tribe-events-c-nav__prev-label {
+    font-size: 2rem;
+    line-height: 2.2rem; 
+    color: var(--color-almost-white-blue);
+    letter-spacing: .5rem;
+}
+
+.tribe-events-calendar-list__event-featured-image-wrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+header.tribe-events-calendar-list__event-header {
+        @media only screen and (max-width: $bp-md) {
+            padding: 2rem;
+        }
+}
+
+.tribe-common .tribe-common-g-row--gutters > .tribe-common-g-col {
+    @media only screen and (max-width: $bp-md) {
+        padding-right: 21px;
+    }
+}
+
+.tribe-events-c-nav__today {
+    display: none;
+}
+
+
+
+
+
+
+/////////////////////////TRIBE EVENTS SINGLE////////////////////////
+#tribe-events-content {
+    padding-top: 10rem !important;
+}
+
+
+.single-tribe_events {
+   
+    scroll-behavior: smooth;
+    overflow: hidden; // added for pseudo-element
+  position: relative; // added for pseudo-element
+  &::before {
+    content: " ";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url('images/Saulrieta_koncerts_forest.jpg');   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    will-change: transform;
+    z-index: -1;
+  }
+}

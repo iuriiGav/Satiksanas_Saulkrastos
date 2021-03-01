@@ -1,4 +1,9 @@
 <?php get_header(); 
+
+/* 
+* Template Name: Gallery
+*/
+
 include 'inc/backgorundImageAndGradient.php';
 include 'inc/lightboxSquareGallery.php';
 ?>
