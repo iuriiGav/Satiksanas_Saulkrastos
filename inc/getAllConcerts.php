@@ -38,11 +38,20 @@ function satiksanos_saulkrastos_upcoming_concerts($number, $pageName, $textDate,
 
     if ($upcoming_concerts->have_posts()) : while ($upcoming_concerts->have_posts()) : $upcoming_concerts->the_post(); ?>
 
-       <?php
-         echo '<pre>';
-        var_dump($upcoming_concerts);
-         echo '</pre>';
-       ?>
+      <?php echo the_title() ?>
+
+
+
+
+<div class="margin-from-nav page-concerts-concert-box">
+
+</div>
+
+
+
+
+
+
 
 
     <?php endwhile;
@@ -51,7 +60,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number, $pageName, $textDate,
 
 
 
-        <div class="news-page-paggination-container">
+        <!-- <div class="news-page-paggination-container">
             <div>
                 <?php
                 previous_posts_link();
@@ -65,7 +74,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number, $pageName, $textDate,
                 ?>
             </div>
 
-        </div>
+        </div> -->
 
 
 
