@@ -190,3 +190,43 @@ header.tribe-events-calendar-list__event-header {
     z-index: -1;
   }
 }
+
+
+.tribe-events-single-event-title {
+    font-size: 4rem !important;
+    font-family: var(--primary-font) !important;
+    font-weight: 500 !important;
+    color: var(--color-almost-white-blue) !important;
+}
+
+.tribe-event-date-start, .tribe-event-time {
+    font-size: 2rem !important;
+    font-family: var(--primary-font) !important;
+    font-weight: 400 !important;
+    color: var(--color-almost-white-blue) !important;
+        @media only screen and (max-width: $bp-md) {
+            color: var(--color-darkest) !important;
+        }
+}
+
+.tribe-events-single-event-description.tribe-events-content {
+    font-size: 2rem !important;
+    text-align: justify;
+    background-color: var(--color-brand-muted);
+    padding: 2rem;
+}
+
+.tribe-events-nav-previous a, .tribe-events-nav-next a {
+    color: var(--color-almost-white-blue) !important;
+    font-size: 1.7rem;
+    font-weight: 500;
+        @media only screen and (max-width: 768px) {
+            background-color: var(--color-brand-direct) !important;
+        }
+}
+
+.tribe-events-back a {
+    color: var(--color-almost-white-blue) !important;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
