@@ -70,7 +70,7 @@ include 'inc/backgorundImageAndGradient.php';
 
     <div class=" history-page-past-artists">
 
-            <h4 class="section-header section-header--dark text-center"><?php esc_html_e(get_field('post_previous_this_year_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
+            <h4 class="section-header section-header--dark text-color-black  text-center"><?php esc_html_e(get_field('post_previous_this_year_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
             
 
             <?php
@@ -161,7 +161,7 @@ endif;
         
         <div  class="col-md-6 history-page-concerts">
 
-        <h4 class="section-header section-header--dark text-center"><?php esc_html_e(get_field('post_previous_this_year_concerts_heading'), 'satiksanos-saulkrastos') ?></h4>
+        <h4 class="section-header text-color-black  text-center"><?php esc_html_e(get_field('post_previous_this_year_concerts_heading'), 'satiksanos-saulkrastos') ?></h4>
 
                     <div  style="background: white;" class="d-flex concert-card__past flex-wrap align-items-center justify-content-around">
                         <div class=" concert-date__past">

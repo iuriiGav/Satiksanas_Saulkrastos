@@ -1,0 +1,48 @@
+.contact-us-page {
+    min-height: 100vh;
+    padding-top: 18rem;
+        @media only screen and (max-width: $bp-md) {
+            padding-top:10rem;
+        }
+}
+
+
+.cform-wrapper {
+    padding: 7rem;
+        @media only screen and (max-width: $bp-md) {
+            padding: 7em 3em;
+            text-align: center;
+        } 
+    
+      
+    
+    }
+
+    .wpcf7-form-control-wrap input {
+        height: 45px;
+        margin-bottom: 2em;
+        &::placeholder {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        } }
+
+.wpcf7-textarea {
+      height: 200px;
+        margin-bottom: 2em;
+        &::placeholder {
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+        }
+}
+
+
+.wpcf7-not-valid-tip {
+    font-size: 1.4rem;
+}
+
+
+wpcf7-response-output {
+border: none !important;
+color: var(--color-almost-white-blue);
+font-size: 1.3rem;
+}
