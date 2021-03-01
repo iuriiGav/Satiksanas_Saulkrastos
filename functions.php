@@ -61,3 +61,58 @@ function satiksanos_setup()
 }
 
 add_action('after_setup_theme', 'satiksanos_setup');
+
+
+
+
+
+
+
+
+//populating custom select field in post concerts with artists 
+//that has been previosly added
+
+
+function acf_load_artists_choices( $field ) {
+
+    //clears fields choices
+    $field['choices'] = array();
+
+
+    $args = array(
+
+        'post_type' => 'artists',
+        'posts_per_page' => 100,
+        //this comes from acf radio btn choice for weather the artist is a participant this year
+        'meta_key'		=> 'post_artist_is_this_artist_participating_this_year',
+        'meta_value'	=> 'is_this_artist_participating_this_year_yes'
+    
+    );
+    
+    
+    $current_artists = new WP_Query($args); 
+
+    if ($current_artists->have_posts()) : while ($current_artists->have_posts()) : $current_artists->the_post();
+   
+     $artist_id = get_the_id();
+     //here the title is the name of the artist
+     $artist = get_the_title($artist_id);
+        
+
+            
+            $field['choices'][ $artist ] = $artist;
+            
+        
+        
+    endwhile;
+    wp_reset_postdata();
+endif; 
+
+return $field;
+}
+
+//hook it to the acf with the name provided in the first argument
+add_filter('acf/load_field/name=post_concerts_artists', 'acf_load_artists_choices');
+
+
+

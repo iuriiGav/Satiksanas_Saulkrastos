@@ -84,3 +84,45 @@ function satiksanos_saulkrastos_prev_festivals() {
 
 add_action( 'init', 'satiksanos_saulkrastos_prev_festivals' );
 
+
+
+function satiksanos_saulkrastos_concerts() {
+	$labels = array(
+		'name'               => _x( 'Concerts', 'satiksanos-saulkrastos' ),
+		'singular_name'      => _x( 'Concert', 'post type singular name', 'satiksanos-saulkrastos' ),
+		'menu_name'          => _x( 'Concerts', 'admin menu', 'satiksanos-saulkrastos' ),
+		'name_admin_bar'     => _x( 'Concerts', 'add new on admin bar', 'satiksanos-saulkrastos' ),
+		'add_new'            => _x( 'Add New', 'book', 'satiksanos-saulkrastos' ),
+		'add_new_item'       => __( 'Add New Concert', 'satiksanos-saulkrastos' ),
+		'new_item'           => __( 'New Concerts', 'satiksanos-saulkrastos' ),
+		'edit_item'          => __( 'Edit Concerts', 'satiksanos-saulkrastos' ),
+		'view_item'          => __( 'View Concerts', 'satiksanos-saulkrastos' ),
+		'all_items'          => __( 'All Concerts', 'satiksanos-saulkrastos' ),
+		'search_items'       => __( 'Search Concerts', 'satiksanos-saulkrastos' ),
+		'parent_item_colon'  => __( 'Parent Concerts:', 'satiksanos-saulkrastos' ),
+		'not_found'          => __( 'No Concerts found.', 'satiksanos-saulkrastos' ),
+		'not_found_in_trash' => __( 'No Concerts found in Trash.', 'satiksanos-saulkrastos' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+    'description'        => __( 'Upcoming and past concerts list, displayed in Home and Concerts pages', 'satiksanos-saulkrastos' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+        'menu_icon'          => 'dashicons-megaphone',
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'concerts' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 6,
+		'supports'           => array( 'title', 'editor', 'thumbnail' ),
+    'taxonomies'          => array( 'category' ),
+	);
+
+	register_post_type( 'concerts', $args );
+}
+
+add_action( 'init', 'satiksanos_saulkrastos_concerts' );
