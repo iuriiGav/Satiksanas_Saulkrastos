@@ -50,6 +50,7 @@ function satiksanos_setup()
     add_image_size('cover', 660, 240, array('center', 'center'));
     add_image_size('five_five', 500, 500, array('center', 'center'));
     add_image_size('square', 350, 350, true);
+    add_image_size('small-square', 150, 150, true);
     add_image_size('portrait', 350, 724, true);
     // add_image_size('box', 400, 375, true);
     add_image_size('mediumSize', 700, 400, true);

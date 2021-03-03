@@ -6,7 +6,7 @@ include 'inc/queries/upcomingConcertQuery.php';
 
 <?php while(have_posts()): the_post(); ?>
 
-<main class="page-gallery-main" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image')?>>
+<main class="page-gallery-main" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image', null)?>>
     <div class="row">
 
         <h4 class="section-header text-color-light">
