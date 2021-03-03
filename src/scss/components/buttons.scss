@@ -35,8 +35,53 @@ border-radius: 5px;
         width: 6em;
         height: initial;
         color: var(--color-darkest);
+
+         &--left-aligned {
+            align-self: flex-start;
+            margin-left: 5rem;
+         }
     }
     &--small {
         margin: 0;
     }
+
+    &--min-height {
+        height: auto;
+    }
+}
+
+
+.btn-important-ig {
+    background: black;
+        height: auto;
+    border-radius: 5px;
+    font-size: 2.1rem;
+    font-weight: 600;
+        &:hover {
+            color: var(--color-brand-direct);
+        }
+    @media only screen and (max-width: 1200px) {
+        font-size: 2.1rem;
+    }
+    
+
+ 
+}
+
+
+.btn-no-border {
+    color: var(--color-darkest);
+    font-size: 1.9rem;
+    border: none;
+    background: transparent;
+    transition: all .2s;
+
+    font-weight: 400;
+    &:hover {
+        transform: scale(1.04);
+        color: var(--color-brand-direct);
+    }
+@media only screen and (max-width: 1200px) {
+    font-size: 2.1rem;
+}
 }

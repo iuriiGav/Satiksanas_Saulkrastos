@@ -1,5 +1,6 @@
 <?php get_header(); 
-include 'inc/getAllArtists.php'
+include 'inc/getAllArtists.php';
+include 'inc/getAllConcerts.php';
 
 ?>
 
@@ -19,82 +20,15 @@ include 'inc/getAllArtists.php'
                     <h4 class="section-header section-header--dark section-header--upcoming"><?php esc_html_e(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
 
 
+<?php satiksanos_saulkrastos_upcoming_concerts(3, null, null, null, null) ?>
+
                     <!-- original concert card begins -->
-                    <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
-                        <div class="row flex-wrap align-items-center  w-100">
-                            <div class="col-md-2 col-6 concert-date">
-                                <h4 class="date-number">7</h4>
-                                <h5 class="date-month">augusts</h5>
-                            </div>
-                            <div class="col-md-4 text-center d-flex order-3 order-md-2   justify-content-center concert-program">
-                                <p class="mb-0">Concert program name here</p>
-                            </div>
-                            <div class="col-md-1 col-6 order-2 order-md-3 d-flex justify-content-center concert-time">
-                                <h3 class="mb-0">16:00</h3>
-                            </div>
-
-                            <div class="col-md-3 d-flex order-4 justify-content-center concert-venue">
-                                <p class="mb-0">Saulkrasti Baznica</p>
-                            </div>
-                            <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
-                                <button class="btn btn-primary-ig btn-lg w-100">get tickets</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- original concert card ends. Followed text coppies -->
 
 
-                    <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
-                        <div class="row flex-wrap align-items-center  w-100">
-                            <div class="col-lg-2 col-6 concert-date">
-                                <h4 class="date-number--small">7</h4>
-                                <h5 class="date-month--small">augusts</h5>
-                            </div>
-                            <div class="col-lg-4 text-center d-flex order-3 order-lg-2   justify-content-center concert-program">
-                                <p class="mb-0">Concert program name here</p>
-                            </div>
-                            <div class="col-lg-1 col-6 order-2 order-lg-3 d-flex justify-content-center concert-time">
-                                <h3 class="mb-0">16:00</h3>
-                            </div>
 
-                            <div class="col-lg-3 d-flex order-4 justify-content-center concert-venue">
-                                <p>Saulkrasti Baznica</p>
-                            </div>
-                            <div class="col-lg-2 d-flex order-5 justify-content-center concert-action-btn">
-                                <button class="btn btn-primary-ig btn-lg w-100 disabled">sold-out</button>
-                            </div>
-                        </div>
-                    </div>
+                  
 
-                    <div class="concert-card concert-card__long align-content-center justify-content-around">
-                        <div class="row flex-wrap align-items-center  w-100">
-                            <div class="col-md-2 col-6 concert-date">
-                                <h4 class="date-number">7</h4>
-                                <h5 class="date-month">augusts</h5>
-                            </div>
-                            <div class="col-md-4 text-center d-flex order-3 order-md-2   justify-content-center concert-program">
-                                <p class="mb-0">Concert program name here</p>
-                            </div>
-                            <div class="col-md-1 col-6 order-2 order-md-3 d-flex justify-content-center concert-time">
-                                <h3 class="mb-0">16:00</h3>
-                            </div>
-
-                            <div class="col-md-3 d-flex order-4 justify-content-center concert-venue">
-                                <p>Saulkrasti Baznica</p>
-                            </div>
-                            <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
-                                <button class="btn btn-primary-ig btn-lg w-100">get tickets</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="see-more-container d-flex">
-
-                        <h5 class="more-concerts">& 3 <?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_text'), 'satiksanos-saulkrastos') ?></h5>
-                        <button class="btn btn-primary-ig btn-primary-ig--long"><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_button_text'), 'satiksanos-saulkrastos') ?></button>
-
-                    </div>
+                    
                 </div>
 
 

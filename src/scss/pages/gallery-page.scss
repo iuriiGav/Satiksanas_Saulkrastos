@@ -1,8 +1,16 @@
 .gallery-page {
-    padding: 5rem 10rem 5rem 10rem;
+    padding: 5rem 0rem 5rem 5rem;
 }
 
 .page-gallery-main div .section-header {
     padding-top: 20rem;
     text-align: center;
+}
+.gallery-sedebar-container {
+    padding-right: 5rem;
+    margin-top: 5rem;
+}
+
+.gallery-cancel-minheight {
+    min-height: auto !important;
 }

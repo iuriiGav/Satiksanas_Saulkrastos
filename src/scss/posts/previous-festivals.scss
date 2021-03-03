@@ -2,11 +2,12 @@
 
     &__top-section {
         min-height: 100vh;
+        @media only screen and (max-width: $bp-md) {
+            min-height: auto !important;
+
+         }
     }
-// padding-right: 5rem;
-    @media only screen and (max-width: $bp-md) {
-       padding: 0 5rem;
-    }
+    
 }
 
 .prev-impressive-stats {
@@ -34,6 +35,9 @@ z-index: 2;
 
 .prev-text-wrapper {
     padding-right: 5rem;
+    @media only screen and (max-width: $bp-md) {
+        padding-right: 0;
+    }
 }
 
 .prev-text {

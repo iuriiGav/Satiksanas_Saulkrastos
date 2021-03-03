@@ -47,6 +47,10 @@ body {
     }
 
   }
+
+  &__smaller {
+    font-size: 3rem;
+  }
 }
 
 
@@ -88,7 +92,42 @@ a {
   line-height: 3.4rem;
 }
 
+.text-title {
+  font-size: 2.6rem;
+  font-weight: 600;
+  @media only screen and (max-width: $bp-xl) {
+    font-size: 2.2rem;
+  }
 
+  @media only screen and (max-width: $bp-md) {
+    font-size: 2.4rem;
+  }
+}
+
+.text-description {
+  font-size: 1.6rem;
+  opacity: .7;
+  letter-spacing: .1rem;
+  line-height: 2.5rem;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.9rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.8rem;
+  }
+}
+
+.text-note {
+  font-size: 1.3rem;
+  letter-spacing: .1rem;
+  line-height: 2.5rem;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.3rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.6rem;
+  }
+}
 
 
 .text-lg-thin {
@@ -122,6 +161,28 @@ a {
   }
   @media only screen and (max-width: $bp-sm) {
     font-size: 2rem;
+  }
+}
+
+.smallest-text-heavy {
+  font-size: 1.6rem;
+  font-family: var(--secondary-font);
+  font-weight: 900;
+  color: var(--color-darkest);
+  &--border-bottom {
+    border-bottom: 1px solid white;
+  }
+}
+.text-time {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  line-height: 2.5rem;
+  @media only screen and (max-width: $bp-lg) {
+    font-size: 1.9rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 1.8rem;
   }
 }
 

@@ -3,6 +3,7 @@ include 'inc/lightboxSquareGallery.php';
 include 'inc/getAllArtists.php';
 include 'inc/getArtistForPastFestivals.php';
 include 'inc/backgorundImageAndGradient.php';
+include 'inc/queries/pastConcertsQuery_inclusive_this_year.php';
 ?>
 
 
@@ -64,7 +65,7 @@ include 'inc/backgorundImageAndGradient.php';
     </section>
 
 
-    <section class="history-page-past-artists-and-concerts" style=<?php setBackgroundImage(true, null, 'post_previous_the_year_artists_section_background_image')?>>
+    <section class="history-page-past-artists-and-concerts" style=<?php setBackgroundImage(true, null, 'post_previous_the_year_artists_section_background_image', null)?>>
       
     <div class="row">
 
@@ -163,18 +164,37 @@ endif;
 
         <h4 class="section-header text-color-black  text-center"><?php esc_html_e(get_field('post_previous_this_year_concerts_heading'), 'satiksanos-saulkrastos') ?></h4>
 
-                    <div  style="background: white;" class="d-flex concert-card__past flex-wrap align-items-center justify-content-around">
-                        <div class=" concert-date__past">
-                            <p class="date-number--small">7 augusts</p>
-                        </div>
-                        <div class=" concert-program__past">
-                            <p class="date-number--small">Concert program name here</p>
-                        </div>
-                      
-                        <div class="concert-action-btn__past">
-                            <button class="btn btn-primary-ig btn-primary-ig__past ">more info</button>
-                        </div>
-                    </div>
+        <?php $upcoming_concerts = past_and_this_year_concerts_query(100);
+                        if ($upcoming_concerts->have_posts()) : while ($upcoming_concerts->have_posts()) : $upcoming_concerts->the_post();
+
+                        $date_and_month = explode(' ', get_field('post_concerts_concert_date'));
+                        $current_year = date("Y");
+
+                        
+                        if( $date_and_month[2] == $historyOfArchive) :
+                        ?>
+
+
+
+                                <div class="sidebar-concert__card-container">
+                                    <div class="sidebar-concert__date">
+                                        <h4 class="mb-0"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
+                                        <h4 class="mb-0"> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
+                                        <?php if ($date_and_month[2] === $current_year) : ?>
+                                            <p class="text-color-brand-direct m-0 p-0"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="sidebar-concert__title">
+                                        <h3> <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
+
+                                                <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
+                                            </a>
+                                        </h3>
+                                    </div>
+                                </div>
+                        <?php endif; endwhile;
+                            wp_reset_postdata();
+                        endif; ?>
                 </div>
 
     </div><!-- .row -->

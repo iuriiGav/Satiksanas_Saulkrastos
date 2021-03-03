@@ -1,0 +1,70 @@
+
+.main-sidebar-container {
+    position: relative;
+      &--padding-right-10 {
+          padding-right: 10rem;
+          @media only screen and (max-width: $bp-lg)    {
+              padding-right: 4rem;
+                  }
+  
+                  @media only screen and (max-width: $bp-md)    {
+                      padding-left: 4rem;
+                          }
+      }
+    }
+  
+    .main-sidebar-content {
+        background-color: var(--color-brand-muted);
+        position: sticky;
+        padding: 5rem;
+        top: 0;
+        min-height: 60vh;
+        margin-bottom: 5rem;;
+        @media only screen and (max-width: $bp-md)    {
+          min-height: 10vh;
+              }
+    }
+  
+  
+    .sidebar-concert {
+  
+      &__card-container {
+          width: 100%;
+          background-color: white;
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 3rem;
+          min-height: 7rem;
+  
+      }
+  
+  
+  
+        &__date {
+          min-width: 8.5rem;
+          background-color: var(--color-darkest);
+          color: var(--color-almost-white-blue);  
+          display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+  
+        }
+  
+        &__title {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+         margin: 0 3rem;
+        }
+    }
+  
+  .sidebar-links:hover {
+      color: var(--color-darkest);
+      opacity: 0.8;
+      transition: all .1s;
+
+      display: inline-block;
+     transform: scale(1.04);
+  }

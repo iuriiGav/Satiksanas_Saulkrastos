@@ -1,6 +1,65 @@
+.upcoming-concerts {
+    min-height: 100vh;
+}
+
 .page-concerts-concert-box {
     width: 70%;
+    padding-top: 3rem;
     margin: 0 auto;
-    min-height: 30rem;
-    background-color: green;
+
+    @media only screen and (max-width: 890px) {
+        width: 90%;
+
+        justify-content: center;
+    }
+    
+}
+
+.card-parent-n-cild {
+    @media only screen and (max-width: 890px) {
+       
+
+        justify-content: center;
+    }
+}
+
+.side-date {
+    min-width: 12rem;
+    max-width: 12rem;
+    height: 30rem;
+    background-color: red;
+}
+.card-medium:nth-child(odd) {
+    margin-right: 10rem;
+    @media only screen and (max-width: 580px) {
+       
+
+        margin-right: 0;
+
+    }
+
+}
+.card-medium {
+    width: 35rem;
+    margin-right: 10rem;
+    position: relative;
+    margin-bottom: 5rem;
+        @media only screen and (max-width: 1000px) {
+            margin-right: 0;
+        }
+}
+
+.concert-date-time-wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+position: absolute;
+background-color: var(--color-brand-direct);
+padding: 1.5rem;
+margin: 1.5rem;
+}
+
+.border-white {
+    border-bottom: 1px solid white;
 }

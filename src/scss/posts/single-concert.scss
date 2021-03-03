@@ -1,0 +1,104 @@
+.single-concert-pic-and-details-container {
+  padding: 0 10rem 0 10rem;
+      @media only screen and (max-width: $bp-lg)    {
+  padding: 0 4rem 0 4rem;
+          
+      }
+}
+
+
+
+.single-concert-thumb {
+  // width: 80%;
+  margin: 0 auto 2rem auto;
+  max-height: 50vh;
+}
+
+.concert-details-card {
+  @include box-shadow-md();
+  margin: 0 auto 10rem auto;
+  border-radius: 0.3rem;
+  padding: 2rem;
+  background-color: var(--color-white);
+  @media only screen and (max-width: $bp-lg)    {
+    margin: 0 auto 2rem auto;
+        }
+}
+
+.date-and-venue {
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.single-concert-date {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.single-concert-date--date-month {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+
+.single-concert-date--year {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.single-concert-date--time {
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+
+.single-concert-venue {
+  &--venue-name {
+    font-size: 1.9rem;
+    font-weight: 600;
+  }
+  &--address {
+    font-size: 1.6rem;
+    margin-bottom: -0.3rem;
+  }
+}
+
+.single-concert-program-and-artists {
+  margin-top: 5rem;
+  &--piece-and-composer-wrapper {
+    margin-bottom: 1.6rem;
+  }
+  &--title {
+    font-family: var(--ternary-font);
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+  }
+  &--composer {
+    font-size: 2.2rem;
+    font-family: var(--secondary-font);
+  }
+  &--piece {
+    font-size: 2rem;
+    line-height: 1.4rem;
+  }
+  &--note {
+    display: inline;
+    font-size: 1.6rem;
+  }
+
+  &--artist-name {
+    display: inline;
+    font-size: 1.9rem;
+    &:not(:first-of-type):before {
+      content: ", ";
+    }
+  }
+}
+
+.single-concert-program-description {
+    font-size: 2rem;
+    opacity: .8;
+    line-height: 2.5rem;
+    text-align: justify;
+}
