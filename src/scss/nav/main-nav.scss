@@ -27,6 +27,16 @@
 
 }
 
+.pll-parent-menu-item {
+
+  display: flex;
+  align-items: center;
+}
+
+  a.dropdown-toggle img {
+    min-width: 16px;
+} 
+
 
   //nav item acive
   .current-menu-item {
@@ -35,7 +45,7 @@
   }
 
   .ig-main-navbar li.menu-item a.nav-link,  a.dropdown-item{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--color-almost-white-blue);
       @media only screen and (max-width: $bp-md) {
         font-size: 3rem;

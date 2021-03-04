@@ -175,7 +175,7 @@ endif;
                         ?>
 
 
-
+<a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
                                 <div class="sidebar-concert__card-container">
                                     <div class="sidebar-concert__date">
                                         <h4 class="mb-0"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
@@ -185,13 +185,14 @@ endif;
                                         <?php endif; ?>
                                     </div>
                                     <div class="sidebar-concert__title">
-                                        <h3> <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
+                                        <h3> 
 
                                                 <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
-                                            </a>
+                                            
                                         </h3>
                                     </div>
                                 </div>
+                                </a>
                         <?php endif; endwhile;
                             wp_reset_postdata();
                         endif; ?>

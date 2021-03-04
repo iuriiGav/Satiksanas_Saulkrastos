@@ -65,10 +65,8 @@
     }
   
   .sidebar-links:hover {
-      color: var(--color-darkest);
-      opacity: 0.8;
-      transition: all .1s;
-
-      display: inline-block;
-     transform: scale(1.04);
+    transition: all 0.3s ease-in-out;
+     display: block;
+     transform: scale(1.03);
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }

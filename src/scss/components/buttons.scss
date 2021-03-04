@@ -2,7 +2,7 @@
 
 .btn-form-submit-ig {
     border-radius: 5px;
-    color: var(--color-brand-direct);
+    color: var(--color-darkest);
     font-size: 2.3rem;
     font-weight: 600;
     border: none;
@@ -14,8 +14,15 @@
         background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
         width: 6em;
         height: initial;
-        color: var(--color-brand-direct);
+        color:  var(--color-darkest);
     
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
+transition: all .2s ease-in-out;
+transform: scale(1.03);
+color:  var(--color-brand-direct);
 }
 
 .btn-primary-ig {

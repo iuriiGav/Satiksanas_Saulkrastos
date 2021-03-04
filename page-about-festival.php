@@ -87,16 +87,18 @@ include 'inc/backgorundImageAndGradient.php';
 
 
                     <div class="col-lg-3 col-md-6 col-12">
+                    <a class="sidebar-links" href="<?php echo get_permalink() ?>">
                         <div class="card card-history">
                             <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'blog')) ?>" class="card-img-top" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
                             <div class="card-body">
 
-                                <a href="<?php echo get_permalink() ?>">
+                              
 
                                     <p class="card-text text-color-darkest large-info-num text-center p-3"><?php esc_html_e(get_field('history_year_of_archive', get_the_ID()), 'satiksanos-saulkrastos') ?></p>
-                                </a>
+                                
                             </div>
                         </div>
+                        </a>
                     </div>
 
 

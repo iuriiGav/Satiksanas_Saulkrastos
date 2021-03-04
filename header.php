@@ -14,7 +14,7 @@
     <div class="container-fluid mx-5">
 
         <a class="navbar-brand d-flex flex-column text-font-secondary" href="<?php echo get_home_url()?>">
-        <h1 class="text-color-brand-direct  text-xxl text-medium"> <?php echo sanitize_text_field(bloginfo('name'));?> </h1>
+        <h1 class="text-color-brand-direct logo-letter-spacing  text-xxl text-medium"> <?php echo sanitize_text_field(bloginfo('name'));?> </h1>
         <h2 class="text-md-lg text-font-primary text-thin text-normal text-color-light-tint align-self-center"><?php echo sanitize_text_field(bloginfo('description'));  ?></h2>
         </a>
 

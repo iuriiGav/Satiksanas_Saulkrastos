@@ -60,23 +60,21 @@ include 'inc/backgorundImageAndGradient.php'
                 
             if($artist === $fullname && get_the_title() !== $fullname) : ?>
 
-
+<a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
           <div class="sidebar-concert__card-container concert-exists-unique-class-for-js-only">
                             <div class="sidebar-concert__date">
                                 <h4><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
                                 <h4> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
-                                <?php if ($date_and_month[2] > $current_year) : ?>
                                     <p class="text-color-brand-direct m-0 p-0"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></p>
-                                <?php endif; ?>
                             </div>
                             <div class="sidebar-concert__title">
-                                <h3> <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
+                                <h3> 
 
                                         <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
-                                    </a>
                                 </h3>
                             </div>
                         </div>
+                        </a>
 
             <?php endif; endforeach  ?>
 

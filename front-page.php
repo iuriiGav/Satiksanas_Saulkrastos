@@ -19,7 +19,7 @@ include 'inc/backgorundImageAndGradient.php';
 
             <div class="row gx-5">
                 <div class="col-sm-9 d-flex justify-content-center  flex-column align-items-center">
-                    <h4 class="section-header section-header--dark section-header--upcoming"><?php esc_html_e(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
+                    <h4 class="section-header section-header--dark section-header--upcoming"><?php  echo sanitize_text_field(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
 
 
 <?php satiksanos_saulkrastos_upcoming_concerts(3, null, null, null, null) ?>
