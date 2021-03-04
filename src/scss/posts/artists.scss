@@ -9,7 +9,6 @@
 
 .artist .artist-photo {
   margin-top: 140px;
-  position: fixed;
 
   text-align: center;
   padding: 0 5rem 0 5rem;
@@ -27,9 +26,15 @@
   }
 }
 
+.single-artist-concerts-sticky-wrapper {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
 .artist .artist-bio {
   margin-top: 110px;
-  margin-right: 5rem;
+  // margin-left: 10rem;
   padding: 5rem;
   background-color: var(--color-brand-muted);
 
@@ -83,3 +88,5 @@ section.artist .artist-bio .artist-name-title {
     display: block;
   }
 }
+
+

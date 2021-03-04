@@ -1,14 +1,16 @@
 <?php get_header(); 
 include 'inc/getAllArtists.php';
 include 'inc/getAllConcerts.php';
+include 'inc/backgorundImageAndGradient.php';
 
 ?>
 
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <main>
-        <section style="background-image: linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, .3) 30%), url(<?php echo get_the_post_thumbnail_url() ?>);" class="hero d-flex justify-content-end align-items-end">
+    <main id="front-page-ig">
+
+        <section style="background-image: linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, .3) 30%), url(<?php echo get_the_post_thumbnail_url(null, 'mediumCover') ?>);" class="hero d-flex justify-content-end align-items-end">
 
             <h2 class="fest-date text-lg-thin" style="color: white;"><?php esc_html_e(get_field('homepage_festival_dates'), 'satiksanos-saulkrastos') ?></h2>
         </section>
@@ -55,14 +57,9 @@ include 'inc/getAllConcerts.php';
 
             </div>
         </section>
-
-
-        <section class="homepage-about-us" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('homepage_about_us_section_cover_image'), 'full')[0] ?>);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    ">
+        
+        
+        <section class="homepage-about-us" style=<?php setBackgroundImage(true, null, 'homepage_about_us_section_cover_image', null, true) ?>>
 
             <h4 class="section-header section-header--light text-center p-4"><?php esc_html_e(get_field('homepage_about_us_section_title'), 'satiksanos-saulkrastos'); ?></h4>
 
@@ -134,14 +131,9 @@ include 'inc/getAllConcerts.php';
 
 
         </section>
+        
 
-
-        <section class="contact-us" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('homepage_contact_us_section_cover_image'), 'full')[0] ?>);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    ">
+        <section class="contact-us" style=<?php setBackgroundImage(true, null, 'homepage_contact_us_section_cover_image', null, true) ?>>
             <h4 class="section-header section-header--light text-font-secondary text-lg-bold text-color-light text-center">CONTACT US</h4>
 
 

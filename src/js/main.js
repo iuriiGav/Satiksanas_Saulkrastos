@@ -1,35 +1,39 @@
 
-import bootstrap from 'bootstrap';
 import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
 
-  // import Swiper bundle with all modules installed
-  import Swiper from '../../node_modules/swiper/swiper-bundle';
 
-  // init Swiper:
-  const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+
+
 
 
 jQuery(document).ready(function($) {
+
+
+  if($('#front-page-ig').length > 0) {
+
+    // init Swiper:
+    const swiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+    
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  }
 
 
 // add padding top to show content behind navbar
@@ -64,7 +68,11 @@ if($('.dropdown-menu').children('.current_page_item').length > 0) {
 $('.current_page_ancestor').css('text-decoration', 'underline')
 }
 
+if($('.listen-artist-on-concert').length > 0) {
 
-
+if($('.concert-exists-unique-class-for-js-only').length === 0) {
+  $('.listen-artist-on-concert').text(' ');
+}
+}
 })
 

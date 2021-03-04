@@ -12,7 +12,7 @@ include 'inc/backgorundImageAndGradient.php'
 
 <?php while(have_posts()): the_post(); ?>
 
-<main class="contact-us-page" style=<?php setBackgroundImage(true, null, 'contact_us_page_background_image', null)?>>
+<main class="contact-us-page" style=<?php setBackgroundImage(true, null, 'contact_us_page_background_image', null, true)?>>
 
 <div class="row">
 

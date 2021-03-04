@@ -4,11 +4,8 @@ include 'inc/helpers_functions.php';
 $page_for_posts = get_option('page_for_posts');
 ?>
 
-<main class="upcoming-concerts" style=<?php setBackgroundImage(true, null, 'page_news_background_image', $page_for_posts) ?>>
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;">
+<main class="upcoming-concerts" style=<?php setBackgroundImage(true, null, 'page_news_background_image', $page_for_posts, true) ?>>
+  
 
     <h4 class="section-header text-color-light padding-from-nav text-center "><?php esc_html_e(get_field('page_news_page_title', $page_for_posts), 'satiksanos-saulkrastos') ?></h4>
     <div class="all-news-container">

@@ -3,7 +3,7 @@
 include 'queries/upcomingConcertQuery.php';
 
 
-function satiksanos_saulkrastos_upcoming_concerts($number, $pageName, $textDate, $textTime, $textCity)
+function satiksanos_saulkrastos_upcoming_concerts($number)
 {
 
     $upcoming_concerts = upcoming_concerts_query($number) ?>
@@ -40,7 +40,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number, $pageName, $textDate,
                                     <?php echo esc_html_e(get_field('post_concerts_concert_time'), 'satiksanos-saulkrastos') ?>
                                 </div>
                             </div>
-                            <img src="<?php the_post_thumbnail_url() ?>" class="card-img-top" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
+                            <img src="<?php the_post_thumbnail_url('blog') ?>" class="card-img-top" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
                             <div class="card-body">
                                 <a href="<?php echo the_permalink() ?> " class="text-color-darkest">
                                     <h5 class="card-title text-title"><?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?> </h5>

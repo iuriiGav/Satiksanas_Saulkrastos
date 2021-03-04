@@ -6,11 +6,11 @@ include 'inc/queries/upcomingConcertQuery.php';
 
 <?php while(have_posts()): the_post(); ?>
 
-<main class="page-gallery-main" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image', null)?>>
+<main class="page-gallery-main" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image', null, true) ?>>
     <div class="row">
 
         <h4 class="section-header text-color-light">
-            GALLERY
+           <?php esc_html_e(get_field('page_gallery_page_title'), 'satiksanos-saulkrastos') ?>
         </h4>
 <div class="col-lg-8 px-2">
     <?php lightboxSquareGallery(false, 'col-12', 'gallery-page', '4', get_the_id())  ?>
@@ -21,8 +21,8 @@ include 'inc/queries/upcomingConcertQuery.php';
 
 <div class="main-sidebar-content gallery-cancel-minheight">
                     <div class="main-sidebar-sticky">
-                        <h4 class="section-headr section-header__smaller text-center text-color-light mb-5">More concerts</h4>
-                        <?php $upcoming_concerts = upcoming_concerts_query(3);
+                        <h4 class="section-headr section-header__smaller text-center text-color-light mb-5"><?php esc_html_e(get_field('page_gallery_upcoming_concerts_sidebar_label'), 'satiksanos-saulkrastos') ?></h4>
+                        <?php $upcoming_concerts = upcoming_concerts_query(6);
                         if ($upcoming_concerts->have_posts()) : while ($upcoming_concerts->have_posts()) : $upcoming_concerts->the_post();
 
                                     if(get_field('post_concerts_program_name') !== $current_single_concert) :
