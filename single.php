@@ -1,16 +1,15 @@
 <?php
 include 'inc/queries/upcomingConcertQuery.php';
 include 'inc/helpers_functions.php';
+include 'inc/backgorundImageAndGradient.php';
 get_header(); ?>
 <?php while (have_posts()) : the_post();
     $current_single_concert = get_field('post_concerts_program_name');
     $news_page_id = get_option('page_for_posts');
 ?>
 
-    <main class="concert-single" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('page_news_background_image', $news_page_id), 'full')[0] ?> );   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed; ">
+
+    <main class="concert-single" style= <?php setBackgroundImage(true, null, 'page_news_background_image', $news_page_id, true) ?>>
 
         <h4 class="padding-from-nav px-5 mb-5 text-color-light section-header text-center">
             <?php the_title(); ?>
@@ -70,7 +69,6 @@ get_header(); ?>
                     
                     ?>
 
-                    <?php  ?>
                         <div class="sidebar-concert__card-container sidebar-concert__card-container--col p-3">
                      
                             <p class="news-pusblish-date"><?php echo get_the_date('', $article->ID); ?></p>

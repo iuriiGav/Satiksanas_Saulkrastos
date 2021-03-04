@@ -1,6 +1,7 @@
 <?php get_header(); 
 
 include 'inc/queries/upcomingConcertQuery.php';
+include 'inc/backgorundImageAndGradient.php'
 ?>
 
 
@@ -14,10 +15,9 @@ include 'inc/queries/upcomingConcertQuery.php';
 
     ?>
 
-    <main class="artist-post" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo esc_url(wp_get_attachment_image_src(get_field('background_image_for_post_about_artist', 11), 'full')[0])  ?>);   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;">
+
+
+    <main class="artist-post" style= <?php setBackgroundImage(true, null, 'background_image_for_post_about_artist', 11, true) ?>>
 
         <section class="artist">
             <div class="row all-single-artist-wrapper-row d-flex flex-row">
@@ -38,7 +38,7 @@ include 'inc/queries/upcomingConcertQuery.php';
                         <div class="artists-concert-in-artist-page--desctop">
 
                             <h3 class="listen-artist-on-concert text-color-light text-md-small text-font-secondary">
-                                Listen to <?php echo esc_html($firstname, 'satiksanos-saulkrastos') ?> on:
+                                <?php echo esc_html_e(get_field('page_concerts_listen_to_part_1', 7), 'satiksanos-saulkrastos') ?> <?php echo esc_html($firstname, 'satiksanos-saulkrastos') ?>  <?php echo esc_html_e(get_field('page_concerts_listen_to_part_2', 7), 'satiksanos-saulkrastos') ?> 
                             </h3>
 
 
@@ -86,27 +86,7 @@ include 'inc/queries/upcomingConcertQuery.php';
                             endwhile;
                             wp_reset_postdata();
                         endif; ?>
-                        <!--                 
-                    <div class="concert-card concert-card--narrow mb-2  align-content-center justify-content-around">
-                        <div class="row flex-wrap align-items-center  w-100">
-
-                            <div class="col-md-3 col-6 flex-row concert-date concert-date--text-small">
-                                <h4 class="date-number me-2">7</h4>
-                                <h5 class="date-month">augusts</h5>
-                            </div>
-                            <div class="col-md-6 text-center d-flex order-3 order-md-2  justify-content-center concert-program">
-                                <p class="mb-0 text-start">Concert program name here</p>
-                            </div>
-                          
-
-
-                            <div class="col-md-3 d-flex order-5 justify-content-center concert-action-btn px-0">
-                                <button class="btn btn-primary-ig btn-primary-ig--small btn-lg w-100">get tickets</button>
-                            </div>
-                        </div>
-
-
-                    </div> -->
+                    
 
 
                     </div>
@@ -123,27 +103,7 @@ include 'inc/queries/upcomingConcertQuery.php';
             </div>
 
             </div>
-            <div class="artists-concert-in-artist-page--mobile">
-
-                <h3 class="listen-artist-on-concert text-color-light text-xxl text-center text-font-secondary mt-5">
-                    Listen to <?php echo esc_html($firstname, 'satiksanos-saulkrastos') ?> on:
-                </h3>
-
-                <a href="">
-                    <div class="artists-concerts-container d-flex justify-content-around flex-wrap">
-
-
-                        <div class="concert-date-box mt-3 text-center">
-                            <h4 class="date-number me-2 text-color-darkest text-md-small text-heavy text-font-ternary">7</h4>
-                            <h5 class="date-month text-color-darkest text-md-small text-font-ternary">augusts</h5>
-                        </div>
-
-                    </div>
-
-                </a>
-
-            </div>
-
+         
         </section>
 
 
@@ -152,5 +112,4 @@ include 'inc/queries/upcomingConcertQuery.php';
 
 <?php endwhile; ?>
 
-<!-- <h5 style='color: red; font-style: italic; margin-top:300px'> <?php echo 'this is from ' . basename(__FILE__); ?></h5> -->
 <?php get_footer(); ?>

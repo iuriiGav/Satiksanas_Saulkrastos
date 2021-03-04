@@ -17,7 +17,7 @@ include 'inc/backgorundImageAndGradient.php'
 <div class="row">
 
 <div class="col-md-10 col-12 cform-wrapper">
-    <h4 class="section-header text-color-light mb-5">CONTACT US</h4>
+    <h4 class="section-header text-color-light mb-5"> <?php esc_html_e(get_field('page_contact_us_contact_us_heading'), 'satiksanos-saulkrastos') ?> </h4>
 <?php the_content(); ?>
 </div>
 
@@ -30,5 +30,4 @@ include 'inc/backgorundImageAndGradient.php'
 
 <?php endwhile; ?>
 
-<h5 style='color: red; font-style: italic;'> <?php echo 'this is from ' . basename(__FILE__); ?></h5>
 <?php get_footer(); ?>

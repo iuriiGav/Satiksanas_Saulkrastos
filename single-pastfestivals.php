@@ -65,7 +65,7 @@ include 'inc/queries/pastConcertsQuery_inclusive_this_year.php';
     </section>
 
 
-    <section class="history-page-past-artists-and-concerts" style=<?php setBackgroundImage(true, null, 'post_previous_the_year_artists_section_background_image', null)?>>
+    <section class="history-page-past-artists-and-concerts" style=<?php setBackgroundImage(true, null, 'post_previous_the_year_artists_section_background_image', null, true)?>>
       
     <div class="row">
 

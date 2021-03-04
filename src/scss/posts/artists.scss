@@ -78,8 +78,9 @@ section.artist .artist-bio .artist-name-title {
 }
 
 .artists-concert-in-artist-page--desctop {
+  margin-bottom: 2rem;
   @media only screen and (max-width: $bp-md) {
-    display: none;
+    // display: none;
   }
 }
 .artists-concert-in-artist-page--mobile {

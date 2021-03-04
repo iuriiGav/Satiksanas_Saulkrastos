@@ -1,8 +1,13 @@
 .contact-us-page {
     min-height: 100vh;
-    padding-top: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding-top: 18rem;
         @media only screen and (max-width: $bp-md) {
-            padding-top:10rem;
+            justify-content: flex-start;
+            padding-top: 10rem;
+
         }
 }
 
@@ -45,4 +50,9 @@ wpcf7-response-output {
 border: none !important;
 color: var(--color-almost-white-blue);
 font-size: 1.3rem;
+}
+
+.contact-us-btn-wrapper {
+    display: flex;
+    justify-content: flex-start;
 }

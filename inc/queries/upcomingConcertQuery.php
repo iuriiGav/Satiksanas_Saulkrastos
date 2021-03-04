@@ -5,7 +5,6 @@ function upcoming_concerts_query ($number) {
     
 
     $currentPage = get_query_var('paged');
-    // $_SESSION['pagenum'] = $currentPage;
     
     $args = array(
         

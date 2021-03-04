@@ -21,7 +21,7 @@ $page_for_posts = get_option('page_for_posts');
                     </a>
 
                 </div>
-                <div class="news-body">
+                <div class="news-body d-flex flex-column justify-content-center">
                     <h3 class="news-pusblish-date"><?php echo get_the_date() ?> </h3>
                     <?php $news_content = get_the_content(); 
                     $desired_description_length = 200;
