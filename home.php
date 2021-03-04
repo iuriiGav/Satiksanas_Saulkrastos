@@ -25,8 +25,6 @@ $page_for_posts = get_option('page_for_posts');
 
                 </div>
                 <div class="news-body">
-
-                
                     <h3 class="news-pusblish-date"><?php echo get_the_date() ?> </h3>
                     <?php $news_content = get_the_content(); 
                     $desired_description_length = 200;
@@ -49,8 +47,25 @@ $page_for_posts = get_option('page_for_posts');
                     <div class="news-post__content text-long"> <?php  custom_length_excerpt($news_content, $desired_description_length, get_the_permalink()) ?></div>
                 </div>
             </div>
+    
 
         <?php endwhile; ?>
+
+<div class="prev-next-post-btn-container">
+
+
+
+<?php if(get_previous_post()) : ?>
+
+<div class="next-prev-post-link next-prev-post-link--prev"> <?php next_posts_link('Older posts'); ?></div>
+
+
+
+<?php endif; if( get_previous_posts_link( )) : ?>
+            <div class="next-prev-post-link next-prev-post-link--next"><?php previous_posts_link('Newer posts'); ?></div>
+<?php endif; ?>
+</div>
+     
     </div>
 
 </main>

@@ -1,0 +1,25 @@
+.article-container {
+    padding: 0 10rem 0 10rem;
+        @media only screen and (max-width: $bp-lg)    {
+    padding: 0 4rem 0 4rem;
+            
+        }
+  }
+
+  .article-content{
+    @include box-shadow-md();
+    margin: 0 auto 10rem auto;
+    border-radius: 0.3rem;
+    padding: 2rem;
+    background-color: var(--color-white);
+    @media only screen and (max-width: $bp-lg)    {
+      margin: 0 auto 2rem auto;
+          }
+  }
+
+  .single-news-text {
+    font-size: 2rem;
+    opacity: .8;
+    line-height: 2.5rem;
+    text-align: justify;
+}

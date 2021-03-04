@@ -139,7 +139,34 @@ $current_single_concert = get_field('post_concerts_program_name');
                             wp_reset_postdata();
                         endif; ?>
                     </div>
+                    <h4 class="section-header section-header__smaller text-center text-color-light mb-5"><?php esc_html_e(get_field('page_news_more_news_title_on_sidebar', get_option('page_for_posts')), 'satiksanos-saulkrastos') ?></h4>
 
+<?php
+
+$news = get_posts();
+
+
+foreach ($news as $article) :
+
+?>
+
+<?php  ?>
+    <div class="sidebar-concert__card-container sidebar-concert__card-container--col p-3">
+ 
+        <p class="news-pusblish-date"><?php echo get_the_date('', $article->ID); ?></p>
+        <h3> 
+            <a class="text-color-darkest sidebar-links" href="<?php echo esc_url($article->guid); ?>">
+                <?php esc_html_e($article->post_title, 'satiksanos-saulkrastos') ?>
+            </a>
+        </h3>
+
+    
+
+    </div>
+
+<?php
+endforeach
+?>
                 </div>
             </div>
         </div>

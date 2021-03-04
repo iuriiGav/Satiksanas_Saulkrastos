@@ -26,7 +26,9 @@ $firstname = explode(' ', trim($fullname))[0];
                     <h1 class="artist-name-title artist-name-title--mobile text-color-light text-font-secondary text-xxl ">
                         <?php the_title() ?> <span class="instrument">(<?php esc_html_e(get_field('post_artist_artist_instrument'), 'satiksanos-saulkrastos') ?>)</span>
                     </h1>
-                    <img class="img-fluid" src="<?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'mediumSize') ?>">
+
+                  
+                    <img class="img-fluid" src="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'square')[0] ?>">
 
                     <div class="artists-concert-in-artist-page--desctop">
 

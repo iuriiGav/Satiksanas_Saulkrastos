@@ -35,6 +35,10 @@
           flex-direction: row;
           margin-bottom: 3rem;
           min-height: 7rem;
+
+          &--col {
+            flex-direction: column;
+          }
   
       }
   

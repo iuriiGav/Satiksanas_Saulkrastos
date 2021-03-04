@@ -1,4 +1,3 @@
-console.log('hello')
 
 import bootstrap from 'bootstrap';
 import lightbox from '../../node_modules/lightbox2/dist/js/lightbox';
@@ -41,7 +40,6 @@ if ($('.smart-scroll').length > 0) { // check if element exists
     $(window).on('scroll', function() {
 
         const scroll_top = $(this).scrollTop();
-        console.log(scroll_top)
 
         if(scroll_top < last_scroll_top) {
             $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
@@ -65,6 +63,7 @@ lightbox.option({
 if($('.dropdown-menu').children('.current_page_item').length > 0) {
 $('.current_page_ancestor').css('text-decoration', 'underline')
 }
+
 
 
 })
