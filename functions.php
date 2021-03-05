@@ -122,3 +122,51 @@ add_filter('acf/load_field/name=post_concerts_artists', 'acf_load_artists_choice
 
 
 
+
+//populate select field of venues in concerts post type
+
+function ig_acf_load_venues_choices( $field ) {
+
+    //clears fields choices
+    $field['choices'] = array();
+
+
+    $args = array(
+
+        'post_type' => 'venues',
+        'posts_per_page' => 100,
+        // //this comes from acf radio btn choice for weather the artist is a participant this year
+        'meta_key'		=> 'post_venues_is_this_an_active_venue',
+        'meta_value'	=> 'is_active_venue'
+    
+    );
+    
+    
+    $venues = new WP_Query($args); 
+
+      
+
+    if ($venues->have_posts()) : while ($venues->have_posts()) : $venues->the_post();
+   
+     $venue_id = get_the_id();
+     //here the title is the name of the artist
+     $venue = get_the_title($venue_id);
+        
+
+            
+            $field['choices'][ $venue ] = $venue;
+            
+        
+        
+    endwhile;
+    wp_reset_postdata();
+endif; 
+
+return $field;
+}
+
+//hook it to the acf with the name provided in the first argument
+add_filter('acf/load_field/name=post_concert_available_venues', 'ig_acf_load_venues_choices');
+
+
+
