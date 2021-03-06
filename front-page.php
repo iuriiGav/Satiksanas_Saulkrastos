@@ -141,31 +141,9 @@ include 'inc/backgorundImageAndGradient.php';
 
         </section>
 
-        <section class="sponsors d-flex justify-content-around">
-
-
-
-            <?php
-
-            $logos = get_post_gallery(65, false);
-            $logo_ids = explode(',', $logos['ids']);
-
-
-
-            foreach ($logo_ids as $id) :
-                $logo = wp_get_attachment_image_src($id, ''); ?>
-
-                <a href="">
-                    <img src="<?php echo $logo[0] ?>" alt="" class="img-fluid sponsor-logo">
-
-                </a>
-
-
-            <?php endforeach; ?>
-        </section>
+       
     </main>
 
 <?php endwhile; ?>
 
-<h5 style='color: red; font-style: italic;'> <?php echo 'this is from ' . basename(__FILE__); ?></h5>
 <?php get_footer(); ?>

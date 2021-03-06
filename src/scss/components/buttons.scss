@@ -18,11 +18,16 @@
     
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary-ig:hover  {
     background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
 transition: all .2s ease-in-out;
 transform: scale(1.03);
 color:  var(--color-brand-direct);
+}
+.btn-primary-ig a:hover {
+    transition: all 0.2s;
+color:  var(--color-brand-direct);
+
 }
 
 .btn-primary-ig {

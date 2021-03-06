@@ -1,8 +1,31 @@
-.sponsors {
+.main-footer {
     background: linear-gradient(180deg, #1F2526 0%, #1F2526 0.01%, #3B3D3E 100%);
-    padding: 5em;
 }
+
+.logo-wrapper {
+    padding: 5em 2rem 2rem 2rem;
+
+}
+
 .sponsor-logo {
     height: 100px;
     min-width: 200px; 
+}
+
+.rights-and-developer {
+    color: var(--color-almost-white-blue);
+    opacity: .7;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+.rights-and-developer a {
+    transition: all 0.3s;
+    color: var(--color-almost-white-blue);
+    &:hover {
+        display: inline-block;
+        transform: scale(1.02);
+    }
+
 }

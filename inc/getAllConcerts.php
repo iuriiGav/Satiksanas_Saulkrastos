@@ -103,7 +103,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                         <div class="col-md-2 col-6 concert-date">
                             <h4 class="date-number"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
                             <h5 class="date-month"><?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h5>
-                            <P class="date-year text-note text-color-brand-direct"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></P>
+                            <P class="date-year text-note text-color-brand-direct">(<?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?>)</P>
                         </div>
                         <div class="col-md-4 text-center d-flex order-3 order-md-2   justify-content-center concert-program">
                             <p class="mb-0"><?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?></p>
