@@ -258,6 +258,10 @@ function ig_acf_save_post($post_id) {
         'post_category' => array(0)
     );
     $event_id = wp_insert_post($new_venue);
+
+    //when I am creating the new concert and adding info into the venue fields,
+    //those wenues are in the acf group post_concerts_couldnt_find_your_venue
+    //
     $venue_group_in_post = get_field('post_concerts_couldnt_find_your_venue');
     $venue_data = array(
 	'post_venue_venue_name' => get_field($venue_group_in_post["post_concerts_venue_name"], $concert_id),
@@ -266,7 +270,7 @@ function ig_acf_save_post($post_id) {
 	'post_venue_venue_website_link' => get_field($venue_group_in_post["post_concerts_venue_website"], $concert_id),
 	'post_venue_venue_phone_number' => get_field($venue_group_in_post["post_concerts_venue_phone_number"], $concert_id),
 );
-update_field("post_venues_group_venue", $venue_data, 756);
+update_field("post_venues_group_venue", $venue_data, $event_id);
 }
 
 
