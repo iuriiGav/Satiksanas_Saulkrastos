@@ -9,10 +9,9 @@ include 'inc/lightboxSquareGallery.php';
 
 ?>
 
-<main class="container-fluid about-us-page-wrapper" style="background: linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, 0) 100%), url(<?php echo wp_get_attachment_image_src(get_field('about_us_section_1_background_image'), 'full')[0] ?>);   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;">
+
+
+<main class="container-fluid about-us-page-wrapper full-screen-cover " style= <?php setBackgroundImage(false, 'linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, 0) 100%)', 'about_us_section_1_background_image', null, true) ?>>
 
 
     <section class="festival-bio">
@@ -40,10 +39,7 @@ include 'inc/lightboxSquareGallery.php';
 
 
 
-    <section class="festival-about-gallery" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('about_us_section_2_background_image'), 'full')[0] ?>);   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;">
+    <section class="festival-about-gallery full-screen-cover" style=  <?php setBackgroundImage(true, null, 'about_us_section_2_background_image', null, true) ?>> 
 
         <h2 class="section-header section-header--light text-center mb-5">
             <?php esc_html_e(get_field('about_us_gallery_section_heading'), 'satiksanos-saulkrastos') ?>
@@ -63,10 +59,7 @@ include 'inc/lightboxSquareGallery.php';
 
 
 
-    <section class="history-of-festival p-5" style="background: linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, 0) 100%), url(<?php echo wp_get_attachment_image_src(get_field('about_us_section_3_background_image'), 'full')[0] ?>);   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;">
+    <section class="history-of-festival p-5 full-screen-cover" style= <?php setBackgroundImage(false, 'linear-gradient(180deg, #1F2526 0%, rgba(196, 196, 196, 0) 100%)', 'about_us_section_3_background_image', null, true) ?>>
         <h2 class="section-header section-header--light text-center mb-5">
             <?php esc_html_e(get_field('about_us_history_section_heading'), 'satiksanos-saulkrastos') ?>
         </h2>

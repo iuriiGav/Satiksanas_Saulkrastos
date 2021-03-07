@@ -17,17 +17,18 @@
     }
   }
 .container-fluid .about-us-page-wrapper {
-  padding-right: 0 !important;
   @media only screen and (max-width: $bp-md) {
-    padding-right: 4rem !important;
+    padding: 0 2rem 0 2rem !important;
    }
 }
 .festival-bio-text {
   margin-top: 20rem;
+  margin-left: 5rem;
   background-color: var(--color-brand-muted);
   padding: 1em;
   @media only screen and (max-width: $bp-md) {
    margin-top: 5rem;
+   margin-left: 0;
   }
 }
 
@@ -78,6 +79,3 @@
 
 }
 
-.card-body {
-    // background-color: var(--color-brand-direct);
-}

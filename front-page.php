@@ -18,7 +18,7 @@ include 'inc/backgorundImageAndGradient.php';
         <section class="homepage-concerts container-fluid p-4">
 
             <div class="row gx-5">
-                <div class="col-sm-9 d-flex justify-content-center  flex-column align-items-center">
+                <div class="col-sm-9 d-flex justify-content-center  flex-column align-items-center z-100">
                     <h4 class="section-header section-header--dark section-header--upcoming"><?php  echo sanitize_text_field(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
 
 
@@ -59,7 +59,7 @@ include 'inc/backgorundImageAndGradient.php';
         </section>
         
         
-        <section class="homepage-about-us" style=<?php setBackgroundImage(true, null, 'homepage_about_us_section_cover_image', null, true) ?>>
+        <section class="homepage-about-us full-screen-cover" style=<?php setBackgroundImage(true, null, 'homepage_about_us_section_cover_image', null, true) ?>>
 
             <h4 class="section-header section-header--light text-center p-4"><?php esc_html_e(get_field('homepage_about_us_section_title'), 'satiksanos-saulkrastos'); ?></h4>
 
@@ -83,7 +83,7 @@ include 'inc/backgorundImageAndGradient.php';
 
 
                                     <!-- Slides -->
-                                    <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
+                                    <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'blog')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
                             <?php endwhile;
                             endif; ?>
 
@@ -133,7 +133,7 @@ include 'inc/backgorundImageAndGradient.php';
         </section>
         
 
-        <section class="contact-us" style=<?php setBackgroundImage(true, null, 'homepage_contact_us_section_cover_image', null, true) ?>>
+        <section class="contact-us full-screen-cover" style=<?php setBackgroundImage(true, null, 'homepage_contact_us_section_cover_image', null, true) ?>>
             <h4 class="section-header section-header--light text-font-secondary text-lg-bold text-color-light text-center">CONTACT US</h4>
 
 

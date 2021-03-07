@@ -1,5 +1,8 @@
 .artists-page-gallery {
     padding: 10rem;
+        @media only screen and (max-width: $bp-md) {
+            padding: 2rem;
+        }
 }
 
 .page-artists {

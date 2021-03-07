@@ -9,8 +9,12 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     min-width: 320px;
+
+      @media only screen and (max-width: 767px) {
+        overflow-x: hidden;
+      }
 }
 
 /* Remove default padding */
@@ -47,6 +51,7 @@ body {
   line-height: 1.5;
   position: relative;
   overflow-x: hidden;
+  background-color: #212529 !important;
   // max-width: 1200px;
   // margin: 0 auto
 

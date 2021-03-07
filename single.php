@@ -9,7 +9,7 @@ get_header(); ?>
 ?>
 
 
-    <main class="concert-single" style= <?php setBackgroundImage(true, null, 'page_news_background_image', $news_page_id, true) ?>>
+    <main class="concert-single" style=<?php setBackgroundImage(true, null, 'page_news_background_image', $news_page_id, true) ?>>
 
         <h4 class="padding-from-nav px-5 mb-5 text-color-light section-header text-center">
             <?php the_title(); ?>
@@ -34,23 +34,24 @@ get_header(); ?>
                         ?>
 
 
-
-                                    <div class="sidebar-concert__card-container">
-                                        <div class="sidebar-concert__date">
-                                            <h4><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
-                                            <h4> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
-                                            <?php if ($date_and_month[2] > $current_year) : ?>
-                                                <p class="text-color-brand-direct m-0 p-0"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></p>
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="sidebar-concert__title">
-                                            <h3> <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
+                                    <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
+                                        <div class="sidebar-concert__card-container">
+                                            <div class="sidebar-concert__date">
+                                                <h4 class="text-small text-color-light"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
+                                                <h4 class="text-small text-color-light"> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
+                                                <?php if ($date_and_month[2] > $current_year) : ?>
+                                                    <p class="text-color-brand-direct m-0 p-0"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></p>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="sidebar-concert__title">
+                                                <h3 class="text-md-small">
 
                                                     <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
-                                                </a>
-                                            </h3>
+
+                                                </h3>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                         <?php endif;
                             endwhile;
                             wp_reset_postdata();
@@ -66,21 +67,22 @@ get_header(); ?>
 
 
                     foreach ($news as $article) :
-                    
+
                     ?>
+                                <a class="text-color-darkest sidebar-links" href="<?php echo esc_url($article->guid); ?>">
 
                         <div class="sidebar-concert__card-container sidebar-concert__card-container--col p-3">
-                     
-                            <p class="news-pusblish-date"><?php echo get_the_date('', $article->ID); ?></p>
-                            <h3> 
-                                <a class="text-color-darkest sidebar-links" href="<?php echo esc_url($article->guid); ?>">
+
+                            <p class="news-pusblish-date text-small"><?php echo get_the_date('', $article->ID); ?></p>
+                            <h3 class="text-md-small">
                                     <?php esc_html_e($article->post_title, 'satiksanos-saulkrastos') ?>
-                                </a>
                             </h3>
 
-                        
+
 
                         </div>
+                        </a>
+
 
                     <?php
                     endforeach

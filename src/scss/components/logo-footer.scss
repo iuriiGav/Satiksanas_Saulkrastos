@@ -1,15 +1,20 @@
 .main-footer {
     background: linear-gradient(180deg, #1F2526 0%, #1F2526 0.01%, #3B3D3E 100%);
+    position: relative;
+    z-index: 100;
 }
 
 .logo-wrapper {
     padding: 5em 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
 }
 
 .sponsor-logo {
     height: 100px;
-    min-width: 200px; 
+    padding: 3rem;
 }
 
 .rights-and-developer {

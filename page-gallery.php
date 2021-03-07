@@ -6,7 +6,7 @@ include 'inc/queries/upcomingConcertQuery.php';
 
 <?php while (have_posts()) : the_post(); ?>
 
-    <main class="page-gallery-main" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image', null, true) ?>>
+    <main class="page-gallery-main full-screen-cover" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image', null, true) ?>>
         <div class="row">
 
             <h4 class="section-header text-color-light">
@@ -34,15 +34,15 @@ include 'inc/queries/upcomingConcertQuery.php';
 <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
                                     <div class="sidebar-concert__card-container">
                                         <div class="sidebar-concert__date">
-                                            <h4><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
-                                            <h4 class="mb-0"> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
-                                            <h4 class="date-year text-note text-color-brand-direct"> <?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></h4>
+                                            <h4 class="text-small text-color-light"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
+                                            <h4 class="mb-0 text-small text-color-light"> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
+                                            <h4 class="date-year text-note text-color-brand-direct text-small"> <?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></h4>
                                             <?php if ($date_and_month[2] > $current_year) : ?>
                                                 <p class="text-color-brand-direct  m-0 p-0"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></p>
                                             <?php endif; ?>
                                         </div>
-                                        <div class="sidebar-concert__title">
-                                            <h3> 
+                                        <div class="sidebar-concert__title ">
+                                            <h3 class="text-md-small"> 
 
                                                     <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
                                                 

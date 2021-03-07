@@ -11,7 +11,7 @@
 
 <div id="all-wrapper" class="container-fluid">
 <nav class="navbar smart-scroll navbar-expand-md bg-dark">
-    <div class="container-fluid mx-5">
+    <div class="container-fluid navbar-wrapper">
 
         <a class="navbar-brand d-flex flex-column text-font-secondary" href="<?php echo get_home_url()?>">
         <h1 class="text-color-brand-direct logo-letter-spacing  text-xxl text-medium"> <?php echo sanitize_text_field(bloginfo('name'));?> </h1>

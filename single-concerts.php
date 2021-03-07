@@ -6,10 +6,8 @@ get_header(); ?>
     $current_single_concert = get_field('post_concerts_program_name');
 ?>
 
-    <main class="concert-single" style="background: linear-gradient(180deg, #2C2929 0%, rgba(142, 140, 140, 0.72) 100%), url(<?php echo wp_get_attachment_image_src(get_field('page_concerts_background_image_for_single_concert_post', 7), 'full')[0] ?> );   background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed; ">
+
+    <main class="concert-single full-screen-cover" style= <?php setBackgroundImage(true, null, 'page_concerts_background_image_for_single_concert_post', 7, true) ?>>
 
         <h4 class="padding-from-nav px-5 mb-5 text-color-light section-header text-center">
             <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
@@ -125,14 +123,13 @@ get_header(); ?>
                                     <a class="text-color-darkest sidebar-links" href="<?php echo the_permalink(); ?>">
                                         <div class="sidebar-concert__card-container">
                                             <div class="sidebar-concert__date">
-                                                <h4><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
-                                                <h4> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
-                                                <?php if ($date_and_month[2] > $current_year) : ?>
-                                                    <p class="text-color-brand-direct m-0 p-0"><?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></p>
-                                                <?php endif; ?>
+                                                <h4 class="text-small text-color-light"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
+                                                <h4 class="text-small text-color-light"> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
+                                                <h4 class="text-small text-color-light"> <?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></h4>
+                                                
                                             </div>
                                             <div class="sidebar-concert__title">
-                                                <h3>
+                                                <h3 class="text-md-small">
 
                                                     <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
 
@@ -165,8 +162,8 @@ get_header(); ?>
                                 </div>
 
                                 <div class="sidebar-news-content-wrapper d">
-                                    <p class="news-pusblish-date"><?php echo get_the_date('', $article->ID); ?></p>
-                                    <h3> <?php esc_html_e($article->post_title, 'satiksanos-saulkrastos') ?> </h3>
+                                    <p class="news-pusblish-date text-small text-color-darkest"><?php echo get_the_date('', $article->ID); ?></p>
+                                    <h3 class="text-md-small"> <?php esc_html_e($article->post_title, 'satiksanos-saulkrastos') ?> </h3>
                                 </div>
 
 

@@ -154,7 +154,7 @@ color: var(--color-darkest)
     font-size: 3.1rem;
   }
   @media only screen and (max-width: $bp-sm) {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 .text-md-lg {
@@ -226,6 +226,10 @@ color: var(--color-darkest)
 
 .logo-letter-spacing {
   letter-spacing: 3px;
+    @media only screen and (max-width: $bp-md) {
+  letter-spacing: 2px;
+      
+    }
 }
 
 /* =========================TEXT COLORS========================= */
