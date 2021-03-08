@@ -27,7 +27,9 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                             <?php
                             $concertDate = get_field('post_concerts_concert_date');
                             $newdate = date('j F', strtotime($concertDate));
-                            $venue = get_field('post_concerts_concert_venue');
+                         
+                            $venue_id = get_field('venue_via_post_object_id');
+                            $concerts_venue = get_field('post_venues_group_venue', $venue_id);
 
                             ?>
                             <div class="concert-date-time-wrap">
@@ -45,7 +47,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                                 <a href="<?php echo the_permalink() ?> " class="text-color-darkest">
                                     <h5 class="card-title text-title"><?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?> </h5>
                                 </a>
-                                <p class="card-text text-note"><?php esc_html_e($venue['post_concerts_venue_name'], 'satiksanos-saulkrastos') ?></p>
+                                <p class="card-text text-note"><?php esc_html_e($concerts_venue['post_venue_venue_name'], 'satiksanos-saulkrastos') ?></p>
                                 <p class="card-text text-description"><?php esc_html_e(get_field('post_concerts_program_description_excerpt'), 'satiksanos-saulkrastos') ?></p>
 
                                 <?php $is_free_concert = get_field('post_concerts_is_this_a_free_concert');
@@ -96,6 +98,9 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                 //split date in two parts to follow the given design with month and date o different lines
                 $date_and_month = explode(' ', get_field('post_concerts_concert_date'));
                 $concerts_count = $upcoming_concerts->found_posts;
+                $venue_id = get_field('venue_via_post_object_id');
+                $concerts_venue = get_field('post_venues_group_venue', $venue_id);
+               
 
                 ?>
                 <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
@@ -113,7 +118,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                         </div>
 
                         <div class="col-md-3 d-flex order-4 justify-content-center concert-venue">
-                            <p class="mb-0  concert-venue"><?php esc_html_e(get_field('post_concerts_concert_venue')['post_concerts_venue_name'], 'satiksanos-saulkrastos') ?></p>
+                            <p class="mb-0  concert-venue"><?php esc_html_e($concerts_venue['post_venue_venue_name'], 'satiksanos-saulkrastos') ?></p>
                         </div>
                         <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
                             <a href="<?php the_permalink(); ?>" class="btn btn-important-ig text-color-brand-direct"> Read more</a>
