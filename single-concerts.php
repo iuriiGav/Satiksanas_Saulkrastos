@@ -7,7 +7,7 @@ get_header(); ?>
 ?>
 
 
-    <main class="concert-single full-screen-cover" style= <?php setBackgroundImage(true, null, 'page_concerts_background_image_for_single_concert_post', 7, true) ?>>
+    <main class="concert-single full-screen-cover" style=<?php setBackgroundImage(true, null, 'page_concerts_background_image_for_single_concert_post', 7, true) ?>>
 
         <h4 class="padding-from-nav px-5 mb-5 text-color-light section-header text-center">
             <?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?>
@@ -30,11 +30,11 @@ get_header(); ?>
                         <div class="single-concert-venue col-md-5">
 
 
-                          
+
 
                             <?php $selected_venue = get_field('venue_via_post_object_id');
-                             $venue = get_field('post_venues_group_venue', $selected_venue); ?>
-                           
+                            $venue = get_field('post_venues_group_venue', $selected_venue); ?>
+
                             <h5 class="single-concert-venue--venue-name"><?php esc_html_e($venue['post_venue_venue_name'], 'satiksanos-saulkrastos') ?></h5>
                             <p class="single-concert-venue--address"><?php esc_html_e($venue['post_venue_venue_address'], 'satiksanos-saulkrastos') ?></p>
                             <p class="single-concert-venue--address"><?php esc_html_e($venue['post_venue_venue_address_line_2'], 'satiksanos-saulkrastos') ?></p>
@@ -77,17 +77,18 @@ get_header(); ?>
                             <h4 class="single-concert-program-and-artists--title"><?php esc_html_e(get_field('page_concerts_artists_label', 7), 'satiksanos-saulkrastos') ?></h4>
 
                             <?php
-                            $select_artists = get_field_object('post_concerts_artists')['value'];
+                            $select_artists = get_field('post_concerts_artists_object');
 
 
                             foreach ($select_artists as $artist) : ?>
-                                <p class="single-concert-program-and-artists--artist-name"><?php esc_html_e($artist, 'satiksanos-saulkrastos') ?></p>
+                                <p class="single-concert-program-and-artists--artist-name"><?php esc_html_e(get_the_title($artist), 'satiksanos-saulkrastos') ?></p>
 
                             <?php endforeach  ?>
 
 
                         </div>
                     </div><!-- . single-concert-program-and-artists -->
+
                     <h4 class="single-concert-program-and-artists--title mt-5"><?php esc_html_e(get_field('page_concerts_about_the_concert_label', 7), 'satiksanos-saulkrastos') ?></h4>
 
                     <div class="single-concert-program-description">
@@ -107,10 +108,15 @@ get_header(); ?>
                     </div>
                 </div><!-- .concert-details-card -->
             </div><!-- .single-concert-pic-and-details-container -->
+
+
+
             <div class="col-xl-4 col-md-5 main-sidebar-container main-sidebar-container--padding-right-10">
                 <div class="main-sidebar-content ">
                     <div class="main-sidebar-sticky">
-                        <h4 class="section-header section-header__smaller text-center text-color-light mb-5">More concerts</h4>
+                        <h4 class="section-header section-header__smaller text-center text-color-light mb-5">
+                            <?php esc_html_e(get_field('page_news_upcoming_concerts_title_on_sidebar', get_option('page_for_posts')), 'satiksanos-saulkrastos') ?>
+                        </h4>
                         <?php $upcoming_concerts = upcoming_concerts_query(3);
                         if ($upcoming_concerts->have_posts()) : while ($upcoming_concerts->have_posts()) : $upcoming_concerts->the_post();
 
@@ -126,7 +132,7 @@ get_header(); ?>
                                                 <h4 class="text-small text-color-light"><?php esc_html_e($date_and_month[1], 'satiksanos-saulkrastos') ?></h4>
                                                 <h4 class="text-small text-color-light"> <?php esc_html_e($date_and_month[0], 'satiksanos-saulkrastos') ?></h4>
                                                 <h4 class="text-small text-color-light"> <?php esc_html_e($date_and_month[2], 'satiksanos-saulkrastos') ?></h4>
-                                                
+
                                             </div>
                                             <div class="sidebar-concert__title">
                                                 <h3 class="text-md-small">
