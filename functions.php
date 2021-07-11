@@ -64,6 +64,8 @@ function satiksanos_setup()
 
     // allow feature images
     add_theme_support('post-thumbnails');
+
+    add_theme_support( 'title-tag' );
 }
 
 add_action('after_setup_theme', 'satiksanos_setup');

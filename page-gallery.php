@@ -1,4 +1,10 @@
-<?php get_header();
+<?php 
+
+/* 
+* Template Name: Gallery
+*/
+
+get_header();
 include 'inc/backgorundImageAndGradient.php';
 include 'inc/lightboxSquareGallery.php';
 include 'inc/queries/upcomingConcertQuery.php';

@@ -1,3 +1,9 @@
+.card-body {
+  a:hover {
+    color: var(--color-brand-direct);
+  }
+}
+
 .concert-card {
   background-color: var(--color-white);
   @include box-shadow-md();
@@ -28,18 +34,17 @@
   @media only screen and (max-width: $bp-md) {
     flex-direction: row;
   }
-  &  h4 {
+  & h4 {
     font-family: var(--secondary-font);
     font-size: 3rem;
     font-weight: 500;
-  
+
     @media only screen and (max-width: 1200px) {
       font-size: 2.6rem;
     }
     @media only screen and (max-width: $bp-md) {
       padding-right: 0.2em;
     }
-
   }
 
   & h5 {
@@ -50,18 +55,17 @@
   }
 
   &--text-small {
-    &  h4 {
+    & h4 {
       font-size: 2.2rem;
-    
+
       @media only screen and (max-width: 1200px) {
         font-size: 2rem;
       }
       @media only screen and (max-width: $bp-md) {
         padding-right: 0.2em;
       }
-  
     }
-  
+
     & h5 {
       font-size: 2rem;
       @media only screen and (max-width: 1200px) {
@@ -69,38 +73,37 @@
       }
     }
   }
-  
 }
 
 .concert-program {
-    font-size: 2.2rem;
-    font-weight: 400;
-    @media only screen and (max-width: 1200px) {
-        font-size: 2rem;
-    }
-    @media only screen and (max-width: $bp-md) {
-        margin-top: .5em;
-        margin-bottom: .5em;
-    }
+  font-size: 2.2rem;
+  font-weight: 400;
+  @media only screen and (max-width: 1200px) {
+    font-size: 2rem;
+  }
+  @media only screen and (max-width: $bp-md) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 }
 
-.concert-time h3{
-    font-family: var(--secondary-font);
-font-size:  3rem;
-font-weight: 500;
-@media only screen and (max-width: 1200px) {
-font-size: 2.7rem;
-}
+.concert-time h3 {
+  font-family: var(--secondary-font);
+  font-size: 3rem;
+  font-weight: 500;
+  @media only screen and (max-width: 1200px) {
+    font-size: 2.7rem;
+  }
 }
 .concert-venue {
+  font-size: 2.2rem;
+  opacity: 0.8;
+  font-weight: 400;
+  @media only screen and (max-width: 1200px) {
     font-size: 2.2rem;
-    opacity: .8;
-    font-weight: 400;
-    @media only screen and (max-width: 1200px) {
-        font-size: 2.2rem;
-    }
+  }
 }
 
 .concert-card--narrow {
-transform: scale(.8);
+  transform: scale(0.8);
 }

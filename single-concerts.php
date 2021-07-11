@@ -79,23 +79,28 @@ get_header(); ?>
                             <?php
                             $select_artists = get_field('post_concerts_artists_object');
 
+                            if (!empty($select_artists)) :
+                                foreach ($select_artists as $artist) : ?>
+                                    <p class="single-concert-program-and-artists--artist-name"> <a href="<?php echo get_permalink($artist) ?>"> <?php esc_html_e(get_the_title($artist), 'satiksanos-saulkrastos') ?></a></p>
 
-                            foreach ($select_artists as $artist) : ?>
-                                <p class="single-concert-program-and-artists--artist-name"><?php esc_html_e(get_the_title($artist), 'satiksanos-saulkrastos') ?></p>
+                            <?php endforeach;
+                            endif;
 
-                            <?php endforeach  ?>
+
+                            ?>
 
 
                         </div>
                     </div><!-- . single-concert-program-and-artists -->
 
-                    <h4 class="single-concert-program-and-artists--title mt-5"><?php esc_html_e(get_field('page_concerts_about_the_concert_label', 7), 'satiksanos-saulkrastos') ?></h4>
+                    <?php if (!empty(get_field('post_concerts_program_description'))) : ?>
+                        <h4 class="single-concert-program-and-artists--title mt-5"><?php esc_html_e(get_field('page_concerts_about_the_concert_label', 7), 'satiksanos-saulkrastos') ?></h4>
 
-                    <div class="single-concert-program-description">
-                        <?php echo wp_kses_post(wpautop(get_field('post_concerts_program_description'))) ?>
+                        <div class="single-concert-program-description">
+                            <?php echo wp_kses_post(wpautop(get_field('post_concerts_program_description'))) ?>
 
-                    </div>
-
+                        </div>
+                    <?php endif; ?>
                     <?php $is_free_concert = get_field('post_concerts_is_this_a_free_concert');
                     $free_concert_text = get_field('post_concerts_free_concert_button_label', 7);
                     $get_ticket = get_field('post_concerts_get_ticket_button_label', 7);

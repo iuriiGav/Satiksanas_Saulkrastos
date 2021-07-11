@@ -80,7 +80,7 @@
   }
   &--piece {
     font-size: 2rem;
-    line-height: 1.4rem;
+    // line-height: 2.4rem;
   }
   &--note {
     display: inline;
@@ -90,6 +90,9 @@
   &--artist-name {
     display: inline;
     font-size: 1.9rem;
+    & a {
+      color: black;
+    }
     &:not(:first-of-type):before {
       content: ", ";
     }

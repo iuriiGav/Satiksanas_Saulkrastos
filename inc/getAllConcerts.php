@@ -26,8 +26,8 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                         <div class="card card-medium">
                             <?php
                             $concertDate = get_field('post_concerts_concert_date');
-                            $newdate = date('j F', strtotime($concertDate));
-                         
+                            $dateString = explode(' ', $concertDate);
+                            $newdate = $dateString[0] . ' ' . $dateString[1];
                             $venue_id = get_field('venue_via_post_object_id');
                             $concerts_venue = get_field('post_venues_group_venue', $venue_id);
 
@@ -36,13 +36,15 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
 
 
                                 <div class="page-concert-date-month smallest-text-heavy smallest-text-heavy--border-bottom  ">
+
                                     <?php echo esc_html_e($newdate, 'satiksanos-saulkrastos') ?>
                                 </div>
                                 <div class="page-concerts-time text-time">
                                     <?php echo esc_html_e(get_field('post_concerts_concert_time'), 'satiksanos-saulkrastos') ?>
                                 </div>
                             </div>
-                            <img src="<?php the_post_thumbnail_url('blog') ?>" class="card-img-top" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
+
+                            <img src="<?php the_post_thumbnail_url('full') ?>" class="card-img-top" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
                             <div class="card-body">
                                 <a href="<?php echo the_permalink() ?> " class="text-color-darkest">
                                     <h5 class="card-title text-title"><?php esc_html_e(get_field('post_concerts_program_name'), 'satiksanos-saulkrastos') ?> </h5>
@@ -100,7 +102,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                 $concerts_count = $upcoming_concerts->found_posts;
                 $venue_id = get_field('venue_via_post_object_id');
                 $concerts_venue = get_field('post_venues_group_venue', $venue_id);
-               
+
 
                 ?>
                 <div class="concert-card mb-5 concert-card__long align-content-center justify-content-around">
@@ -127,7 +129,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                 </div>
 
 
-               
+
         <?php endwhile;
             wp_reset_postdata();
         endif; ?>
@@ -179,15 +181,15 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
 
 
             <?php $concerts_page = get_pages(array(
-//get the id of the page that uses concert template
+                //get the id of the page that uses concert template
                 'meta_key' => '_wp_page_template',
                 'meta_value' => 'page-concerts.php'
-            )); 
-            foreach($concerts_page as $page){
-                 $concert_page_id = $page->ID;
+            ));
+            foreach ($concerts_page as $page) {
+                $concert_page_id = $page->ID;
             }
             ?>
-            <button class="btn btn-primary-ig btn-primary-ig--long "><a class="text-color-darkest" href="<?php echo get_page_link($concert_page_id)?>"><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_button_text'), 'satiksanos-saulkrastos') ?></a></button>
+            <button class="btn btn-primary-ig btn-primary-ig--long "><a class="text-color-darkest" href="<?php echo get_page_link($concert_page_id) ?>"><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_button_text'), 'satiksanos-saulkrastos') ?></a></button>
         </div>
 
     <?php endif; ?>
