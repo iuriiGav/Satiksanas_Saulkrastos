@@ -1,4 +1,4 @@
-<?php get_header(); 
+<?php get_header();
 include 'inc/getAllArtists.php';
 include 'inc/getAllConcerts.php';
 include 'inc/backgorundImageAndGradient.php';
@@ -19,46 +19,35 @@ include 'inc/backgorundImageAndGradient.php';
 
             <div class="row gx-5">
                 <div class="col-sm-9 d-flex justify-content-center  flex-column align-items-center z-100">
-                    <h4 class="section-header section-header--dark section-header--upcoming"><?php  echo sanitize_text_field(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
+                    <h4 class="section-header section-header--dark section-header--upcoming"><?php echo sanitize_text_field(get_field('homepage_upcoming_concerts_section_title'), 'satiksanos-saulkrastos') ?></h4>
 
 
-<?php satiksanos_saulkrastos_upcoming_concerts(3, null, null, null, null) ?>
+                    <?php satiksanos_saulkrastos_upcoming_concerts(3, null, null, null, null) ?>
 
                     <!-- original concert card begins -->
 
 
 
-                  
 
-                    
+
+
                 </div>
 
 
 
-                <div class="col-sm-2 homepage-concerts__map-of-venues d-flex align-items-center">
-                    <img src="<?php echo esc_url(wp_get_attachment_image_src(get_field('homepage_map_of_venues'), 'full')[0]) ?>" alt="<?php echo get_post_meta(get_field('homepage_map_of_venues'), '_wp_attachment_image_alt', TRUE); ?>" class="homepage-map">
-                    <div class="marker-wrapper">
+                <div class="col-sm-3 homepage-concerts__map-of-venues">
 
-                        <svg class="map-marker" width="50" height="53" viewBox="0 0 50 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
-                                <path d="M24.8056 1.57075e-06C34.7129 7.04635e-07 42.7729 8.52571 42.773 19.0052C42.773 32.0105 26.694 51.1031 26.0094 51.9095C25.3664 52.6671 24.2437 52.6658 23.6019 51.9095C22.9173 51.1031 6.83834 32.0105 6.83833 19.0052C6.83853 8.52571 14.8985 2.43686e-06 24.8056 1.57075e-06ZM24.8056 28.5672C29.7902 28.5672 33.8454 24.2777 33.8454 19.0052C33.8454 13.7326 29.7901 9.44324 24.8056 9.44324C19.8212 9.44325 15.766 13.7327 15.766 19.0053C15.766 24.2778 19.8212 28.5672 24.8056 28.5672Z" fill="#F69333" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0">
-                                    <rect width="49.6112" height="52.4773" fill="white" transform="matrix(-1 8.74228e-08 8.74228e-08 1 49.6113 0)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-
-                    </div>
+                    <?php
+                    echo get_field('homepage_map_of_venues_shortcode')
+                    ?>
 
                 </div>
 
 
             </div>
         </section>
-        
-        
+
+
         <section class="homepage-about-us full-screen-cover" style=<?php setBackgroundImage(true, null, 'homepage_about_us_section_cover_image', null, true) ?>>
 
             <h4 class="section-header section-header--light text-center p-4"><?php esc_html_e(get_field('homepage_about_us_section_title'), 'satiksanos-saulkrastos'); ?></h4>
@@ -119,19 +108,19 @@ include 'inc/backgorundImageAndGradient.php';
         </section>
         <section class="homepage-artists">
             <h4 class="section-header section-header--dark text-center"><?php esc_html_e(get_field('homepage_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
-            
-            
-            <?php getAllArtists ('post_artist_is_this_artist_participating_this_year', 'is_this_artist_participating_this_year_yes', true)  ?>
-            
-            
-        
+
+
+            <?php getAllArtists('post_artist_is_this_artist_participating_this_year', 'is_this_artist_participating_this_year_yes', true)  ?>
+
+
+
 
 
 
 
 
         </section>
-        
+
 
         <section class="contact-us full-screen-cover" style=<?php setBackgroundImage(true, null, 'homepage_contact_us_section_cover_image', null, true) ?>>
             <h4 class="section-header section-header--light text-font-secondary text-lg-bold text-color-light text-center">CONTACT US</h4>
@@ -141,7 +130,7 @@ include 'inc/backgorundImageAndGradient.php';
 
         </section>
 
-       
+
     </main>
 
 <?php endwhile; ?>

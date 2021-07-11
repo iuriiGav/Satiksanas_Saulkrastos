@@ -1,100 +1,62 @@
 .homepage-concerts {
-    background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(31, 37, 38, 0.58) 92.71%), linear-gradient(0deg, #BBBBBB, #BBBBBB);
-    min-height: 100vh;
-    text-align: center;
-    position: relative;
-    @media only screen and (max-width: 850px) {
-            
-        
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(31, 37, 38, 0.58) 92.71%),
+    linear-gradient(0deg, #bbbbbb, #bbbbbb);
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  @media only screen and (max-width: 850px) {
+  }
+  &__map-of-venues {
+    min-height: 500px;
+  }
+
+  & .see-more-container {
+    padding: 2em;
+    align-self: start;
+    margin-left: 4em;
+    justify-content: center;
+    align-content: center;
+    @media only screen and (max-width: $bp-md) {
+      flex-direction: column;
+      margin-left: 2em;
     }
-    &__map-of-venues {
-        
-        & img {
-            position: absolute;
-           top: 50%;
-           right: 7vw;
-           transform: translateY(-50%);
-            height: 80%;
-            background-color: #9cc0f9;
-            @media only screen and (max-width: 1170px) {
-                right: 3vw;
-            }
-
-
-            @media only screen and (max-width: 850px) {
-            
-                right: -100px;
-            }
-            @media only screen and (max-width: $bp-sm) {
-                height: 100%;
-                width: 100%;
-                right: - 60px;
-                background-color: transparent;
-            }
-
-
-        }
+    & h5 {
+      font-size: 2rem;
+      padding-right: 3em;
+      align-self: center;
+      text-align: center;
+      color: white;
     }
-
- 
-
-
-
-
-
-
-
- 
-
-    & .see-more-container {
-        padding: 2em;
-        align-self: start;
-        margin-left: 4em;
-        justify-content: center;
-        align-content: center;
-            @media only screen and (max-width: $bp-md) {
-                flex-direction: column;
-                margin-left: 2em;
-            }
-        & h5 {
-            font-size: 2rem;
-            padding-right: 3em; 
-            align-self: center;
-            text-align: center;
-            color: white;
-        }
-    }
+  }
 }
 
 .map-marker {
-    z-index: 20;
-    position: relative;
-    top: 100px;
-    left: -140px;
-    @media only screen and (max-width: $bp-sm) {
-       display: none;
-    }
+  z-index: 20;
+  position: relative;
+  top: 100px;
+  left: -140px;
+  @media only screen and (max-width: $bp-sm) {
+    display: none;
+  }
 }
 
 .marker-wrapper {
-    position: absolute;
-    top: 50%;
-    right: 7vw;
-    transform: translateY(-50%);
-     height: 80%;
-     @media only screen and (max-width: 1170px) {
-         right: 3vw;
-     }
+  position: absolute;
+  top: 50%;
+  right: 7vw;
+  transform: translateY(-50%);
+  height: 80%;
+  @media only screen and (max-width: 1170px) {
+    right: 3vw;
+  }
 
-
-     @media only screen and (max-width: 850px) {
-     
-         right: -100px;
-     }
-     @media only screen and (max-width: $bp-sm) {
-         height: 100%;
-         width: 100%;
-         right: - 60px;
-         background-color: transparent;
-     }
+  @media only screen and (max-width: 850px) {
+    right: -100px;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    height: 100%;
+    width: 100%;
+    right: -60px;
+    background-color: transparent;
+  }
 }

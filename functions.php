@@ -245,3 +245,5 @@ add_action( 'pre_insert_term', function ( $term, $taxonomy )
         ? new WP_Error( 'term_addition_blocked', __( 'You cannot add terms to this taxonomy' ) )
         : $term;
 }, 0, 2 );
+
+add_filter('acf/format_value/name=homepage_map_of_venues_shortcode', 'do_shortcode');
