@@ -33,7 +33,7 @@ function getAllArtists($yearOfParticipationCondition, $yearOfParticipationValue,
                             <div class="image">
                                 <a href="<?php echo esc_url(get_permalink()) ?>">
 
-                                    <img class="position-relative img-<?php echo 'some-unic-id' ?>" src="<?php echo esc_url(get_the_post_thumbnail_url($artist_id, 'full')) ?>" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
+                                    <img class="position-relative img-<?php echo 'some-unic-id' ?>" src="<?php echo esc_url(get_the_post_thumbnail_url($artist_id, 'large')) ?>" alt="<?php esc_html_e(get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>">
 
                                     <?php if ($isDisplayText) : ?>
                                         <div class="artist-name text-center text-color-light d-flex justify-content-center">

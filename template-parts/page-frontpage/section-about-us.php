@@ -22,7 +22,7 @@
 
 
                             <!-- Slides -->
-                            <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'large')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
                     <?php endwhile;
                     endif; ?>
 

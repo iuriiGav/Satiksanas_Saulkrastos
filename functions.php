@@ -55,16 +55,11 @@ function satiksanos_setup()
 {
 
     // add image sizes
-    // add_image_size('cover', 660, 240, array('center', 'center'));
-    // add_image_size('five_five', 500, 500, array('center', 'center'));
-    add_image_size('square', 350, 350, true);
-    // add_image_size('small-square', 150, 150, true);
-    add_image_size('blog', 350, 230, true);
-    // add_image_size('portrait', 350, 724, true);
-    // add_image_size('box', 400, 375, true);
-    // add_image_size('mediumSize', 700, 400, true);
-    add_image_size('mediumCover', 1250, 834, true);
-    // add_image_size('blog', 966, 644, true);
+
+    add_image_size('square', 350, 350);
+    add_image_size('blog', 350, 230);
+    add_image_size('mediumCover', 1250, 834);
+    add_image_size('large', 1024, 1024);
 
 
     // allow feature images
@@ -258,5 +253,3 @@ add_filter('acf/format_value/name=about_us_gallery_shortcode_modula', 'do_shortc
 add_filter('acf/format_value/name=gallery_shortcode_from_modula', 'do_shortcode');
 add_filter('acf/format_value/name=post_previous_festivals__gallery_shortcode', 'do_shortcode');
 add_filter('acf/format_value/name=page_contact_uscontact_form_shortcode', 'do_shortcode');
-
-
