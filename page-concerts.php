@@ -6,7 +6,7 @@
 
 get_header(); 
 include 'inc/getAllConcerts.php';
-include 'inc/backgorundImageAndGradient.php';
+// include 'inc/backgorundImageAndGradient.php';
 
 
 ?>

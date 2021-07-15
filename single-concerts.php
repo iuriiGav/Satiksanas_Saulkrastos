@@ -1,5 +1,5 @@
 <?php
-include 'inc/backgorundImageAndGradient.php';
+// include 'inc/backgorundImageAndGradient.php';
 include 'inc/queries/upcomingConcertQuery.php';
 get_header(); ?>
 <?php while (have_posts()) : the_post();

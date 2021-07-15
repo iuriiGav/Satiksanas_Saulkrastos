@@ -1,7 +1,7 @@
 <?php get_header();
 
 include 'inc/queries/upcomingConcertQuery.php';
-include 'inc/backgorundImageAndGradient.php'
+// include 'inc/backgorundImageAndGradient.php'
 ?>
 
 

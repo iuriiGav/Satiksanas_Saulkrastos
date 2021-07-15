@@ -5,7 +5,7 @@
 */
 
 get_header();
-include 'inc/backgorundImageAndGradient.php';
+// include 'inc/backgorundImageAndGradient.php';
 include 'inc/lightboxSquareGallery.php';
 include 'inc/queries/upcomingConcertQuery.php';
 ?>
@@ -13,13 +13,19 @@ include 'inc/queries/upcomingConcertQuery.php';
 <?php while (have_posts()) : the_post(); ?>
 
     <main class="page-gallery-main full-screen-cover" style=<?php setBackgroundImage(true, null, 'page_gallery_background_image', null, true) ?>>
-        <div class="row">
+        <div class="row page-gallery-main-content-container">
 
             <h4 class="section-header text-color-light">
                 <?php esc_html_e(get_field('page_gallery_page_title'), 'satiksanos-saulkrastos') ?>
             </h4>
             <div class="col-lg-8 px-2">
-                <?php lightboxSquareGallery(false, 'col-12', 'gallery-page', '4', get_the_id())  ?>
+            
+
+                <?php
+                echo get_field('gallery_shortcode_from_modula')
+                
+                // lightboxSquareGallery(false, 'col-12', 'gallery-page', '4', get_the_id())  
+                ?>
 
             </div>
 

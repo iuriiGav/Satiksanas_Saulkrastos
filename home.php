@@ -1,5 +1,5 @@
 <?php get_header();
-include 'inc/backgorundImageAndGradient.php';
+// include 'inc/backgorundImageAndGradient.php';
 include 'inc/helpers_functions.php';
 $page_for_posts = get_option('page_for_posts');
 ?>

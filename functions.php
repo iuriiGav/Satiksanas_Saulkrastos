@@ -1,6 +1,8 @@
 <?php
 require get_template_directory() . '/inc/custom-post-types.php';
 
+require_once 'inc/backgorundImageAndGradient.php';
+require_once 'inc/queries/pastConcertsQuery_inclusive_this_year.php';
 
 
 
@@ -65,7 +67,7 @@ function satiksanos_setup()
     // allow feature images
     add_theme_support('post-thumbnails');
 
-    add_theme_support( 'title-tag' );
+    add_theme_support('title-tag');
 }
 
 add_action('after_setup_theme', 'satiksanos_setup');
@@ -101,12 +103,12 @@ add_action('after_setup_theme', 'satiksanos_setup');
 
 
 
-            // $acf_group_to_update = get_field('post_venues_group_venue');
-            // update_field($acf_group_to_update['post_venue_venue_name'], $attempted_venue['post_concerts_venue_name'], $post_id );
-            // update_field($acf_group_to_update['post_venue_venue_address'], $attempted_venue['post_concerts_venue_address'], $post_id );
-            // update_field($acf_group_to_update['post_venue_venue_postcode'], $attempted_venue['post_concerts_venue_postcode'], $post_id );
-            // update_field($acf_group_to_update['post_venue_venue_website_link'], $attempted_venue['post_concerts_venue_website'], $post_id );
-            // update_field($acf_group_to_update['post_venue_venue_phone_number'], $attempted_venue['post_concerts_venue_phone_number'], $post_id );
+// $acf_group_to_update = get_field('post_venues_group_venue');
+// update_field($acf_group_to_update['post_venue_venue_name'], $attempted_venue['post_concerts_venue_name'], $post_id );
+// update_field($acf_group_to_update['post_venue_venue_address'], $attempted_venue['post_concerts_venue_address'], $post_id );
+// update_field($acf_group_to_update['post_venue_venue_postcode'], $attempted_venue['post_concerts_venue_postcode'], $post_id );
+// update_field($acf_group_to_update['post_venue_venue_website_link'], $attempted_venue['post_concerts_venue_website'], $post_id );
+// update_field($acf_group_to_update['post_venue_venue_phone_number'], $attempted_venue['post_concerts_venue_phone_number'], $post_id );
 //         }
 
 //     endif;
@@ -141,7 +143,7 @@ add_action('after_setup_theme', 'satiksanos_setup');
 
 //     $acf_group_to_update = get_field('post_venues_group_venue');
 //     update_field($acf_group_to_update['post_venue_venue_name'], $attempted_venue, $post_id);
-    
+
 // }
 
 
@@ -162,41 +164,41 @@ add_action('after_setup_theme', 'satiksanos_setup');
 
 
 //hook into the init action and call create_book_taxonomies when it fires
- 
-add_action( 'init', 'ig_hierarchical_taxonomy_for_venues', 0 );
- 
+
+add_action('init', 'ig_hierarchical_taxonomy_for_venues', 0);
+
 //create a custom taxonomy name it subjects for your posts
- 
-function ig_hierarchical_taxonomy_for_venues() {
- 
-// Add new taxonomy, make it hierarchical like categories
-//first do the translations part for GUI
- 
-  $labels = array(
-    'name' => _x( 'Current Year Venue', 'taxonomy general name' ),
-    'singular_name' => _x( 'Current Year Venue', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Current Year Venue' ),
-    'all_items' => __( 'All Current Year Venue' ),
-    'parent_item' => __( 'Parent Current Year Venue' ),
-    'parent_item_colon' => __( 'Parent Current Year Venue:' ),
-    'edit_item' => __( 'Edit Current Year Venue' ), 
-    'update_item' => __( 'Update Current Year Venue' ),
-    'add_new_item' => __( 'Add New Current Year Venue' ),
-    'new_item_name' => __( 'New Current Year Venue Name' ),
-    'menu_name' => __( 'Current Year Venue' ),
-  );    
- 
-// Now register the taxonomy
-  register_taxonomy('current_year_venue',array('venues'), array(
-    'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_in_rest' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'current_year_venue' ),
-  ));
- 
+
+function ig_hierarchical_taxonomy_for_venues()
+{
+
+    // Add new taxonomy, make it hierarchical like categories
+    //first do the translations part for GUI
+
+    $labels = array(
+        'name' => _x('Current Year Venue', 'taxonomy general name'),
+        'singular_name' => _x('Current Year Venue', 'taxonomy singular name'),
+        'search_items' =>  __('Search Current Year Venue'),
+        'all_items' => __('All Current Year Venue'),
+        'parent_item' => __('Parent Current Year Venue'),
+        'parent_item_colon' => __('Parent Current Year Venue:'),
+        'edit_item' => __('Edit Current Year Venue'),
+        'update_item' => __('Update Current Year Venue'),
+        'add_new_item' => __('Add New Current Year Venue'),
+        'new_item_name' => __('New Current Year Venue Name'),
+        'menu_name' => __('Current Year Venue'),
+    );
+
+    // Now register the taxonomy
+    register_taxonomy('current_year_venue', array('venues'), array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_in_rest' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'current_year_venue'),
+    ));
 }
 
 
@@ -206,21 +208,24 @@ function ig_hierarchical_taxonomy_for_venues() {
  * @param   array   $args
  * @return  array
  */
-function wpse_139269_term_radio_checklist( $args ) {
-    if ( ! empty( $args['taxonomy'] ) && $args['taxonomy'] === 'current_year_venue' /* <== Change to your required taxonomy */ ) {
-        if ( empty( $args['walker'] ) || is_a( $args['walker'], 'Walker' ) ) { // Don't override 3rd party walkers.
-            if ( ! class_exists( 'WPSE_139269_Walker_Category_Radio_Checklist' ) ) {
+function wpse_139269_term_radio_checklist($args)
+{
+    if (!empty($args['taxonomy']) && $args['taxonomy'] === 'current_year_venue' /* <== Change to your required taxonomy */) {
+        if (empty($args['walker']) || is_a($args['walker'], 'Walker')) { // Don't override 3rd party walkers.
+            if (!class_exists('WPSE_139269_Walker_Category_Radio_Checklist')) {
                 /**
                  * Custom walker for switching checkbox inputs to radio.
                  *
                  * @see Walker_Category_Checklist
                  */
-                class WPSE_139269_Walker_Category_Radio_Checklist extends Walker_Category_Checklist {
-                    function walk( $elements, $max_depth, ...$args ) {
-                        $output = parent::walk( $elements, $max_depth, ...$args );
+                class WPSE_139269_Walker_Category_Radio_Checklist extends Walker_Category_Checklist
+                {
+                    function walk($elements, $max_depth, ...$args)
+                    {
+                        $output = parent::walk($elements, $max_depth, ...$args);
                         $output = str_replace(
-                            array( 'type="checkbox"', "type='checkbox'" ),
-                            array( 'type="radio"', "type='radio'" ),
+                            array('type="checkbox"', "type='checkbox'"),
+                            array('type="radio"', "type='radio'"),
                             $output
                         );
 
@@ -236,14 +241,18 @@ function wpse_139269_term_radio_checklist( $args ) {
     return $args;
 }
 
-add_filter( 'wp_terms_checklist_args', 'wpse_139269_term_radio_checklist' );
+add_filter('wp_terms_checklist_args', 'wpse_139269_term_radio_checklist');
 
 
-add_action( 'pre_insert_term', function ( $term, $taxonomy )
-{
-    return ( 'current_year_venue' === $taxonomy )
-        ? new WP_Error( 'term_addition_blocked', __( 'You cannot add terms to this taxonomy' ) )
+add_action('pre_insert_term', function ($term, $taxonomy) {
+    return ('current_year_venue' === $taxonomy)
+        ? new WP_Error('term_addition_blocked', __('You cannot add terms to this taxonomy'))
         : $term;
-}, 0, 2 );
+}, 0, 2);
 
 add_filter('acf/format_value/name=homepage_map_of_venues_shortcode', 'do_shortcode');
+add_filter('acf/format_value/name=about_us_gallery_shortcode_modula', 'do_shortcode');
+add_filter('acf/format_value/name=gallery_shortcode_from_modula', 'do_shortcode');
+add_filter('acf/format_value/name=post_previous_festivals__gallery_shortcode', 'do_shortcode');
+
+
