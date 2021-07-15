@@ -1,12 +1,9 @@
 .single-concert-pic-and-details-container {
   padding: 0 10rem 0 10rem;
-      @media only screen and (max-width: $bp-lg)    {
-  padding: 0 2rem 0 2rem;
-          
-      }
+  @media only screen and (max-width: $bp-lg) {
+    padding: 0 2rem 0 2rem;
+  }
 }
-
-
 
 .single-concert-thumb {
   // width: 80%;
@@ -20,9 +17,9 @@
   border-radius: 0.3rem;
   padding: 2rem;
   background-color: var(--color-white);
-  @media only screen and (max-width: $bp-lg)    {
+  @media only screen and (max-width: $bp-lg) {
     margin: 0 auto 2rem auto;
-        }
+  }
 }
 
 .date-and-venue {
@@ -100,13 +97,22 @@
 }
 
 .single-concert-program-description {
-    font-size: 2rem;
-    opacity: .8;
-    line-height: 2.5rem;
-    text-align: justify;
+  font-size: 2rem;
+  opacity: 0.8;
+  line-height: 2.5rem;
+  text-align: justify;
 }
 
 .sidebar-news-image-wrapper {
-  max-width: 30%; 
+  max-width: 30%;
   margin-right: 2rem;
+}
+.sidebar-news-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  .news-pusblish-date {
+    margin-bottom: 0;
+  }
 }

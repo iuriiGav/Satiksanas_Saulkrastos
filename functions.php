@@ -4,6 +4,7 @@ require_once 'inc/backgorundImageAndGradient.php';
 require_once 'inc/queries/pastConcertsQuery_inclusive_this_year.php';
 require_once 'inc/getAllConcerts.php';
 require_once 'inc/getUpcomingConcertsIDs.php';
+require_once 'inc/helpers_functions.php';
 // require_once 'inc/getAllArtists.php';
 
 
