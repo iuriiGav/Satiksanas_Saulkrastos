@@ -22,7 +22,7 @@
 
 
                             <!-- Slides -->
-                            <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'blog')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
+                            <div class="swiper-slide"><img src="<?php echo esc_url(wp_get_attachment_image_src($image, 'full')[0]) ?>" alt="<?php esc_html_e(get_post_meta($image, '_wp_attachment_image_alt', TRUE), 'satiksanos-saulkrastos') ?>"></div>
                     <?php endwhile;
                     endif; ?>
 
@@ -38,21 +38,23 @@
         </div>
     </div>
 
-    <div class="row text-center festival-numbers">
 
-        <?php if (have_rows('homepage_about_us_numbers_to_impress')) : while (have_rows('homepage_about_us_numbers_to_impress')) : the_row();
+    <?php if (have_rows('homepage_about_us_numbers_to_impress')) : while (have_rows('homepage_about_us_numbers_to_impress')) : the_row();
 
-        ?>
+    ?>
+
+            <div class="row text-center festival-numbers">
+
                 <div class="<?php the_sub_field('class') ?> text-color-white">
                     <h3 class="large-info-text"><?php the_sub_field('text') ?></h3>
                     <h2 class="large-info-num"><?php the_sub_field('number') ?></h2>
                 </div>
+            </div>
 
-        <?php endwhile;
-        endif; ?>
+    <?php endwhile;
+    endif; ?>
 
 
 
 
-    </div>
 </section>
