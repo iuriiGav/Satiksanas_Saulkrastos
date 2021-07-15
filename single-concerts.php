@@ -1,6 +1,6 @@
 <?php
 // include 'inc/backgorundImageAndGradient.php';
-include 'inc/queries/upcomingConcertQuery.php';
+// include 'inc/queries/upcomingConcertQuery.php';
 get_header(); ?>
 <?php while (have_posts()) : the_post();
     $current_single_concert = get_field('post_concerts_program_name');

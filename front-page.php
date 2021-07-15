@@ -1,6 +1,6 @@
 <?php get_header();
 include 'inc/getAllArtists.php';
-include 'inc/getAllConcerts.php';
+// include 'inc/getAllConcerts.php';
 if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <main id="front-page-ig">

@@ -1,103 +1,95 @@
-
-
 .btn-form-submit-ig {
-    border-radius: 5px;
-    color: var(--color-darkest);
-    font-size: 2.3rem;
-    font-weight: 600;
-    border: none;
+  border-radius: 5px;
+  color: var(--color-darkest);
+  font-size: 2.3rem;
+  font-weight: 600;
+  border: none;
 
-    @media only screen and (max-width: 1200px) {
-        font-size: 2.1rem;
-    }
- 
-        background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
-        width: 6em;
-        height: initial;
-        color:  var(--color-darkest);
-    
+  @media only screen and (max-width: 1200px) {
+    font-size: 2.1rem;
+  }
+
+  background: linear-gradient(90deg, #effbff 4.22%, rgba(229, 229, 229, 0.55) 100%);
+  width: 6em;
+  height: initial;
+  color: var(--color-darkest);
 }
 
-.btn-primary:hover, .btn-primary-ig:hover  {
-    background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
-transition: all .2s ease-in-out;
-transform: scale(1.03);
-color:  var(--color-brand-direct);
+.btn-primary:hover,
+.btn-primary-ig:hover {
+  background: linear-gradient(90deg, #effbff 4.22%, rgba(229, 229, 229, 0.55) 100%);
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.03);
+  color: var(--color-brand-direct);
 }
 .btn-primary-ig a:hover {
-    transition: all 0.2s;
-color:  var(--color-brand-direct);
-
+  transition: all 0.2s;
+  color: var(--color-brand-direct);
 }
 
 .btn-primary-ig {
-    background: black;
-    height: 3.4em;
-    margin: 1em;
+  background: black;
+  height: 3.4em;
+  margin: 1em;
+  border-radius: 5px;
+  color: var(--color-brand-direct);
+  font-size: 2.3rem;
+  font-weight: 600;
+  @media only screen and (max-width: 1200px) {
+    font-size: 2.1rem;
+  }
+  &--long {
+    background: linear-gradient(90deg, #effbff 4.22%, rgba(229, 229, 229, 0.55) 100%);
     border-radius: 5px;
-    color: var(--color-brand-direct);
-    font-size: 2.3rem;
-    font-weight: 600;
-    @media only screen and (max-width: 1200px) {
-        font-size: 2.1rem;
-    }
-    &--long {
-        background: linear-gradient(90deg, #EFFBFF 4.22%, rgba(229, 229, 229, 0.55) 100%);
-border-radius: 5px;
-        width: 8em;
-        height: initial;
-        color: var(--color-darkest);
+    width: 8em;
+    height: initial;
+    color: var(--color-darkest);
 
-         &--left-aligned {
-            align-self: flex-start;
-            margin-left: 5rem;
-         }
+    &--left-aligned {
+      align-self: flex-start;
+      margin-left: 5rem;
     }
-    &--small {
-        margin: 0;
-    }
+  }
+  &--small {
+    margin: 0;
+  }
 
-    &--min-height {
-        height: auto;
-    }
+  &--min-height {
+    height: auto;
+  }
 }
-
 
 .btn-important-ig {
-    background: black;
-        height: auto;
-    border-radius: 5px;
+  background: black;
+  height: auto;
+  border-radius: 5px;
+  font-size: 2.1rem;
+  font-weight: 600;
+  &:hover {
+    color: var(--color-brand-direct);
+  }
+  @media only screen and (max-width: 1200px) {
     font-size: 2.1rem;
-    font-weight: 600;
-        &:hover {
-            color: var(--color-brand-direct);
-        }
-    @media only screen and (max-width: 1200px) {
-        font-size: 2.1rem;
-    }
-    
-
- 
+  }
 }
-
 
 .btn-no-border {
-    color: var(--color-darkest);
-    font-size: 1.9rem;
-    border: none;
-    background: transparent;
-    transition: all .2s;
+  color: var(--color-darkest);
+  font-size: 1.9rem;
+  border: none;
+  background: transparent;
+  transition: all 0.2s;
 
-    font-weight: 400;
-    &:hover {
-        transform: scale(1.04);
-        color: var(--color-brand-direct);
-    }
-@media only screen and (max-width: 1200px) {
+  font-weight: 400;
+  &:hover {
+    transform: scale(1.04);
+    color: var(--color-brand-direct);
+  }
+  @media only screen and (max-width: 1200px) {
     font-size: 2.1rem;
-}
+  }
 
-&--no-padding-left-yes-p-top {
+  &--no-padding-left-yes-p-top {
     padding: 2rem 0 0 0;
-}
+  }
 }
