@@ -3,6 +3,7 @@ require_once 'inc/custom-post-types.php';
 require_once 'inc/backgorundImageAndGradient.php';
 require_once 'inc/queries/pastConcertsQuery_inclusive_this_year.php';
 require_once 'inc/getAllConcerts.php';
+require_once 'inc/getUpcomingConcertsIDs.php';
 // require_once 'inc/getAllArtists.php';
 
 
@@ -255,5 +256,6 @@ add_filter('acf/format_value/name=homepage_map_of_venues_shortcode', 'do_shortco
 add_filter('acf/format_value/name=about_us_gallery_shortcode_modula', 'do_shortcode');
 add_filter('acf/format_value/name=gallery_shortcode_from_modula', 'do_shortcode');
 add_filter('acf/format_value/name=post_previous_festivals__gallery_shortcode', 'do_shortcode');
+add_filter('acf/format_value/name=page_contact_uscontact_form_shortcode', 'do_shortcode');
 
 

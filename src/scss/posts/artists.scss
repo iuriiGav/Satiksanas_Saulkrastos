@@ -60,7 +60,6 @@ section.artist .artist-bio .artist-name-title {
       display: none;
     }
   }
-
 }
 
 .artist-name-title--mobile {
@@ -77,20 +76,11 @@ section.artist .artist-bio .artist-name-title {
   border-radius: 5px;
 }
 
-.artists-concert-in-artist-page--desctop {
+.artists-concert-in-artist-page--listen-artist-text {
   margin-bottom: 2rem;
   @media only screen and (max-width: $bp-md) {
-    // display: none;
   }
 }
-.artists-concert-in-artist-page--mobile {
-  display: none;
-  @media only screen and (max-width: $bp-md) {
-    display: block;
-  }
-}
-
-
 
 .artist-image {
   max-height: 60vh;
