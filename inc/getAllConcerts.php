@@ -174,10 +174,10 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
 
         <div class="see-more-container d-flex">
             <?php if ($concerts_count - $number === 1) : ?>
-                <h5 class="more-concerts">& <?php echo ($concerts_count - $number) ?><?php echo ' ' ?><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_text_singular'), 'satiksanos-saulkrastos') ?></h5>
+                <h5 class="more-concerts"><?php echo ($concerts_count - $number) ?><?php echo ' ' ?><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_text_singular'), 'satiksanos-saulkrastos') ?></h5>
             <?php else : ?>
 
-                <h5 class="more-concerts">& <?php echo ($concerts_count - $number) ?><?php echo ' ' ?><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_text'), 'satiksanos-saulkrastos') ?></h5>
+                <h5 class="more-concerts"><?php esc_html_e(get_field('homepage_upcoming_concerts_see_more_text'), 'satiksanos-saulkrastos') ?><?php echo ' '?><?php echo ($concerts_count - $number) ?><?php echo ' ' ?></h5>
 
             <?php endif; ?>
 
