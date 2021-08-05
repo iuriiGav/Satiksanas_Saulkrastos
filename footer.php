@@ -25,7 +25,7 @@ foreach ($logo_ids as $id) :
 <?php endforeach; ?>
 </section>
 
-<p class="rights-and-developer">all rights reserved © Satikšanās Saulkrastos Kamermūzikas festivāls <?php echo date('Y') ?> | created by <a href="">iurii gavryliuk</a> </p>
+<p class="rights-and-developer">all rights reserved © Satikšanās Saulkrastos Kamermūzikas festivāls <?php echo date('Y') ?> | created by <a href="mailto:iurii.gavryliuk@gmail.com">iurii gavryliuk</a> </p>
 
 </footer>
 

@@ -1,7 +1,10 @@
 <?php
+$concerts_page_ID = ig_get_page_ID_by_template_name('page-concerts')[0];
+
+
 $is_free_concert = get_field('post_concerts_is_this_a_free_concert');
-$free_concert_text = get_field('post_concerts_free_concert_button_label', 7);
-$get_ticket = get_field('post_concerts_get_ticket_button_label', 7);
+$free_concert_text = get_field('post_concerts_free_concert_button_label', $concerts_page_ID);
+$get_ticket = get_field('post_concerts_get_ticket_button_label', $concerts_page_ID);
 ?>
 
 <div class="get-ticket-btn-container mt-5">

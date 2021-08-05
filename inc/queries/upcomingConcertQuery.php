@@ -10,7 +10,6 @@ function upcoming_concerts_query ($number) {
         
         'post_type' => 'concerts',
         'posts_per_page' => $number,
-        // 'paged' => $currentPage,
         'meta_query' => array(
             array(
                 'key' => 'post_concerts_concert_date',

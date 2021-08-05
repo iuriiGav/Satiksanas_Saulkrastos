@@ -53,9 +53,11 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                                 <p class="card-text text-description"><?php esc_html_e(get_field('post_concerts_program_description_excerpt'), 'satiksanos-saulkrastos') ?></p>
 
                                 <?php $is_free_concert = get_field('post_concerts_is_this_a_free_concert');
-                                $free_concert_text = get_field('post_concerts_free_concert_button_label', 7);
-                                $get_ticket = get_field('post_concerts_get_ticket_button_label', 7);
-                                $read_more = get_field('post_concerts_read_more_button_label', 7);
+                                $concerts_page_ID = ig_get_page_ID_by_template_name('page-concerts')[0];
+
+                                $free_concert_text = get_field('post_concerts_free_concert_button_label', $concerts_page_ID);
+                                $get_ticket = get_field('post_concerts_get_ticket_button_label', $concerts_page_ID);
+                                $read_more = get_field('post_concerts_read_more_button_label', $concerts_page_ID);
 
                                 ?>
 
@@ -123,7 +125,7 @@ function satiksanos_saulkrastos_upcoming_concerts($number)
                             <p class="mb-0  concert-venue"><?php esc_html_e($concerts_venue['post_venue_venue_name'], 'satiksanos-saulkrastos') ?></p>
                         </div>
                         <div class="col-md-2 d-flex order-5 justify-content-center concert-action-btn">
-                            <a href="<?php the_permalink(); ?>" class="btn btn-important-ig text-color-brand-direct"> Read more</a>
+                            <a href="<?php the_permalink(); ?>" class="btn btn-important-ig text-color-brand-direct"><?php echo esc_html_e(get_field('post_concerts_read_more_button_label', 814), 'satiksanos-saulkrastos') ?></a>
                         </div>
                     </div>
                 </div>

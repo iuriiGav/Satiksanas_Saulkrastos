@@ -1,6 +1,7 @@
 <?php get_header();
 
 $upcoming_concerts_array = getUpcomingConcertsIDs();
+$concerts_page_ID = ig_get_page_ID_by_template_name('page-concerts')[0];
 
 
 
@@ -25,7 +26,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                             <?php get_template_part('template-parts/single-artists/section', 'artist-name-photo') ?>
                             <div class="artists-concert-in-artist-page--listen-artist-text">
                                 <h3 class="listen-artist-on-concert text-color-light text-md-small text-font-secondary">
-                                    <?php echo esc_html_e(get_field('page_concerts_listen_to_part_1', 7), 'satiksanos-saulkrastos') ?> <?php echo esc_html($firstname, 'satiksanos-saulkrastos') ?> <?php echo esc_html_e(get_field('page_concerts_listen_to_part_2', 7), 'satiksanos-saulkrastos') ?>
+                                    <?php echo esc_html($firstname, 'satiksanos-saulkrastos') ?>  <?php echo esc_html_e(get_field('page_concerts_listen_to_part_1', $concerts_page_ID), 'satiksanos-saulkrastos') ?> <?php echo esc_html_e(get_field('page_concerts_listen_to_part_2', $concerts_page_ID), 'satiksanos-saulkrastos') ?>
                                 </h3>
                             </div>
 

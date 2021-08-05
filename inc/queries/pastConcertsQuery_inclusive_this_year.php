@@ -5,13 +5,11 @@ function past_and_this_year_concerts_query ($number) {
     
 
     $currentPage = get_query_var('paged');
-    // $_SESSION['pagenum'] = $currentPage;
     
     $args = array(
         
         'post_type' => 'concerts',
         'posts_per_page' => $number,
-        // 'paged' => $currentPage,
         'meta_query' => array(
             array(
                 'key' => 'post_concerts_concert_date',

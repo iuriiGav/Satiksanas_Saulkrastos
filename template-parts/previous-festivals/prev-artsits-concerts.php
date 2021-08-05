@@ -7,7 +7,7 @@ $args = array(
 );
 
 
-$this_year_artists = new WP_Query($args); 
+$this_year_artists = new WP_Query($args);
 $upcoming_concerts = past_and_this_year_concerts_query(100);
 $artists_section_size = empty($upcoming_concerts) ? '' : ' history-page-past-artists--full'
 ?>
@@ -17,7 +17,7 @@ $artists_section_size = empty($upcoming_concerts) ? '' : ' history-page-past-art
 
         <div class="row">
 
-            <div class=" history-page-past-artists <?php echo $artists_section_size?>">
+            <div class=" history-page-past-artists <?php echo $artists_section_size ?>">
 
                 <h4 class="section-header section-header--light  text-center"><?php esc_html_e(get_field('post_previous_this_year_artists_section_heading'), 'satiksanos-saulkrastos') ?></h4>
 
@@ -71,7 +71,9 @@ $artists_section_size = empty($upcoming_concerts) ? '' : ' history-page-past-art
 
                                                         <div class="artist-name text-center text-color-light d-flex justify-content-center">
                                                             <h3 class="name text-font-secondary text-heavy text-small text-color-light"><?php esc_html_e(get_the_title($artist_id), 'satiksanos-saulkrastos') ?></h3>
-                                                            <!-- <p class="instrument text-color-brand-direct text-small">(<?php esc_html_e(get_field('post_artist_artist_instrument'), 'satiksanos-saulkrastos') ?>)</p> -->
+                                                            <?php if (!empty(get_field('post_artist_artist_instrument'))) : ?>
+                                                                <p class="instrument text-color-brand-direct text-small">(<?php esc_html_e(get_field('post_artist_artist_instrument'), 'satiksanos-saulkrastos') ?>)</p>
+                                                            <?php endif; ?>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -101,7 +103,7 @@ $artists_section_size = empty($upcoming_concerts) ? '' : ' history-page-past-art
 
 
 
-            <?php 
+            <?php
             if ($upcoming_concerts->have_posts()) : while ($upcoming_concerts->have_posts()) : $upcoming_concerts->the_post();
 
                     $date_and_month = explode(' ', get_field('post_concerts_concert_date'));

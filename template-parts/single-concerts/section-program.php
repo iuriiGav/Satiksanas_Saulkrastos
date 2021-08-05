@@ -1,7 +1,11 @@
+<?php
+$concerts_page_ID = ig_get_page_ID_by_template_name('page-concerts')[0];
+?>
+
 <div class="col-md-7 single-concert-program-and-artists--program">
 
     <h4 class="single-concert-program-and-artists--title">
-        <?php esc_html_e(get_field('page_concerts_program_label', 7), 'satiksanos-saulkrastos') ?>
+        <?php esc_html_e(get_field('page_concerts_program_label',  $concerts_page_ID), 'satiksanos-saulkrastos') ?>
     </h4>
 
     <?php if (have_rows('post_concerts_program_composer_and_piece')) : while (have_rows('post_concerts_program_composer_and_piece')) : the_row();
