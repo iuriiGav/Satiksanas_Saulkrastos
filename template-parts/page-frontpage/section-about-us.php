@@ -7,7 +7,7 @@
         <!-- <div class="col-md-6"> </div> -->
 
         <div class="col-md-6 about-text-card d-flex align-items-center">
-            <p class="text-font-ternary text-md-normal"> <?php esc_html_e(get_field('homepage_about_us_section_short_text'), 'satiksanos-saulkrastos') ?> </p>
+            <div class="text-font-ternary text-md-normal"> <?php echo wp_kses_post(wpautop(get_field('homepage_about_us_section_short_text'), 'satiksanos-saulkrastos')) ?> </div>
         </div>
         <div class="col-md-6 offset-md-6 offset-xs-6 homepage-aboutus-gallery-container d-flex justify-content-center align-items-center">
             <!-- Slider main container -->
